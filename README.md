@@ -52,3 +52,7 @@ NEXT_PUBLIC_STRIPE_SECRET_KEY=''
 - [Stripe](https://stripe.com/)
 
 &nbsp;
+
+## License
+
+- [MIT](LICENSE.md)
