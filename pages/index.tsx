@@ -1,5 +1,5 @@
 import { client, urlFor } from '@/lib/client'
-import Image from 'next/image'
+import { ProductCard } from '@/components'
 
 import { IProduct } from '@/types'
 
@@ -10,22 +10,21 @@ interface IProps {
 export default function Home({ products }: IProps) {
   return (
     <>
-      {products.map((product: any) => (
-        <div key={product._id}>
-          <div className='relative w-56 h-56 bg-white rounded-2xl'>
-            <Image
-              className='object-contain p-5'
-              src={urlFor(product.image && product.image[0]).url()}
-              alt={product.name}
-              fill
-            />
-          </div>
+      <section className='container mx-auto flex gap-12 flex-wrap justify-center items-center py-16'>
+        {products.map((product: any) => (
+          <>
+            <ProductCard product={product} />
+          </>
+        ))}
+      </section>
 
-          <h2>{product.name}</h2>
-          <p>{product.details}</p>
-          <p>{product.price} &euro;</p>
-        </div>
-      ))}
+      {/* <section className='bg-red-200 container mx-auto grid justify-items-center items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-12'>
+        {products.map((product: any) => (
+          <>
+            <ProductCard product={product} />
+          </>
+        ))}
+      </section> */}
     </>
   )
 }

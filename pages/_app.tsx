@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import appName from '@/utils/appName'
-import Header from '@/components/Header'
+import { Header } from '@/components'
 import { Inconsolata } from 'next/font/google'
 
 const inconsolata = Inconsolata({ subsets: ['latin'] })
@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </header>
 
       {/* MAIN */}
-      <main>
+      <main className='bg-fuchsia-300'>
         <Component {...pageProps} />
       </main>
 

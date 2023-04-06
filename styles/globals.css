@@ -9,7 +9,7 @@
   --color-primary-darker: #4338ca;
   --color-selection: rgba(92, 113, 252, 0.25);
   --color-text: #000;
-  --color-p: #475569;
+  --color-p: #000;
 
   /* Font rendering, smoothing, adjusting */
   text-rendering: optimizeLegibility;
@@ -54,15 +54,6 @@ body {
   /* text-align: center; */
 
   /* overflow: hidden; */
-}
-
-/* header,
-footer {
-  padding: 0.5rem 1rem;
-} */
-
-main {
-  padding: 1rem;
 }
 
 img,

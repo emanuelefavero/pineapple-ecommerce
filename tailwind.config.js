@@ -21,7 +21,19 @@ module.exports = {
         lg: '1024px',
         xl: '1280px',
       },
+
+      wordSpacing: {
+        tight: '-0.1em',
+      },
+
+      // letterSpacing: {
+      //   tighter2: '-0.01em',
+      // },
     },
+  },
+  variants: {
+    wordSpacing: ['responsive'], // enable responsive variants for word spacing
+    //   letterSpacing: ['responsive'],
   },
   plugins: [],
 }
