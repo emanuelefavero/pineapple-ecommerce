@@ -3,13 +3,13 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import appName from '@/utils/appName'
 import Header from '@/components/Header'
-import { Inter } from 'next/font/google'
+import { Inconsolata } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const inconsolata = Inconsolata({ subsets: ['latin'] })
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${inter.className}`}>
+    <div className={`${inconsolata.className}`}>
       <Head>
         <title>{appName}</title>
         <meta
