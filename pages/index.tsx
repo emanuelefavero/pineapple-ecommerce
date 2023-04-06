@@ -12,9 +12,9 @@ export default function Home({ products }: IProps) {
     <>
       <section className='container mx-auto flex gap-12 flex-wrap justify-center items-center py-16'>
         {products.map((product: any) => (
-          <>
+          <div key={product._id}>
             <ProductCard product={product} />
-          </>
+          </div>
         ))}
       </section>
 

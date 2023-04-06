@@ -11,7 +11,6 @@ export default function ProductCard({ product }: IProps) {
   return (
     <>
       <div
-        key={product._id}
         className={`${styles.ProductCard} bg-white text-black rounded-lg w-72 h-96 px-8 py-6 flex flex-col justify-between items-center`}
       >
         <div className='relative w-56 h-full rounded-2xl mb-4 flex-1'>
