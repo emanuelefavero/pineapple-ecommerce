@@ -91,6 +91,31 @@ p {
   color: var(--color-p);
 }
 
+/* UTILITIES */
+.wordSpacingTight {
+  word-spacing: -0.2em;
+}
+
+.wordSpacingCompact {
+  word-spacing: -0.1em;
+}
+
+.wordSpacingPrice {
+  word-spacing: -0.33em;
+}
+
+/* TODO: Move to separate component */
+.productDetailButton {
+  border: 2px solid #000;
+  box-shadow: 2px 2px 0px 1px rgba(0, 0, 0, 1);
+}
+
+.productDetailButton:hover {
+  box-shadow: 1px 1px 0px 0px rgba(0, 0, 0, 1);
+  transform: translateX(3px) translateY(1px);
+  transition: all 0.15s ease-in-out;
+}
+
 /* DARK MODE */
 /* @media (prefers-color-scheme: dark) {
   html {

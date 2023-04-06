@@ -35,5 +35,20 @@ module.exports = {
     wordSpacing: ['responsive'], // enable responsive variants for word spacing
     //   letterSpacing: ['responsive'],
   },
-  plugins: [],
+  plugins: [
+    // * CUSTOM UTILITY CLASSES
+    // function ({ addUtilities }) {
+    //   addUtilities(
+    //     {
+    //       '.my-custom-color': {
+    //         color: '#8d96f2',
+    //       },
+    //       '.my-custom-bg': {
+    //         backgroundColor: '#172275',
+    //       },
+    //     },
+    //     ['responsive']
+    //   )
+    // },
+  ],
 }
