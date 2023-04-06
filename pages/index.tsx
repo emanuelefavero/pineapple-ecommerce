@@ -10,7 +10,6 @@ interface IProps {
 export default function Home({ products }: IProps) {
   return (
     <>
-      <h1>Home</h1>
       {products.map((product: any) => (
         <div key={product._id}>
           <div className='relative w-56 h-56 bg-white rounded-2xl'>

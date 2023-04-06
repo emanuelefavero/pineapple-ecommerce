@@ -4,11 +4,12 @@
 
 /* DEFAULT STYLING */
 :root {
-  --color-background: #0f1622;
-  --color-primary: rgb(192, 66, 255);
-  --color-primary-darker: rgb(80, 20, 113);
-  --color-selection: rgba(207, 92, 252, 0.25);
-  --color-p: #bbc2d8;
+  --color-background: #ffffff;
+  --color-primary: #0f766e;
+  --color-primary-darker: #134e4a;
+  --color-selection: rgba(92, 252, 215, 0.25);
+  --color-text: #000;
+  --color-p: #475569;
 
   /* Font rendering, smoothing, adjusting */
   text-rendering: optimizeLegibility;
@@ -42,7 +43,7 @@ body {
     Ubuntu, Cantarell, 'Open Sans', sans-serif;
 
   background-color: var(--color-background);
-  color: #fff;
+  color: var(--color-text);
 
   min-height: 100vh;
 
@@ -55,10 +56,10 @@ body {
   /* overflow: hidden; */
 }
 
-header,
+/* header,
 footer {
   padding: 0.5rem 1rem;
-}
+} */
 
 main {
   padding: 1rem;
@@ -105,7 +106,7 @@ a:hover {
   text-decoration: underline;
 }
 
-button {
+/* button {
   cursor: pointer;
   border: 1px solid var(--color-primary);
   outline: none;
@@ -122,7 +123,7 @@ button {
 button:hover {
   background-color: var(--color-primary);
   color: white;
-}
+} */
 
 p {
   color: var(--color-p);
