@@ -17,14 +17,6 @@ export default function Home({ products }: IProps) {
           </div>
         ))}
       </section>
-
-      {/* <section className='bg-red-200 container mx-auto grid justify-items-center items-center gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 py-12'>
-        {products.map((product: any) => (
-          <>
-            <ProductCard product={product} />
-          </>
-        ))}
-      </section> */}
     </>
   )
 }
