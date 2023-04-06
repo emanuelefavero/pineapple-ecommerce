@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
       </header>
 
       {/* MAIN */}
-      <main className='bg-fuchsia-300'>
+      <main className='bg-indigo-200'>
         <Component {...pageProps} />
       </main>
 
