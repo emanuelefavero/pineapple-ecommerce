@@ -2,7 +2,7 @@ import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import appName from '@/utils/appName'
-import { Header } from '@/components'
+import { Header, Footer } from '@/components'
 import { Inconsolata } from 'next/font/google'
 
 const inconsolata = Inconsolata({ subsets: ['latin'] })
@@ -31,7 +31,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </main>
 
       {/* FOOTER */}
-      <footer>Footer</footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
