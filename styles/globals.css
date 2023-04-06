@@ -47,12 +47,6 @@ body {
 
   min-height: 100vh;
 
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* flex-direction: column; */
-  /* text-align: center; */
-
   /* overflow: hidden; */
 }
 
@@ -97,57 +91,8 @@ a:hover {
   text-decoration: underline;
 }
 
-/* button {
-  cursor: pointer;
-  border: 1px solid var(--color-primary);
-  outline: none;
-
-  background-color: #000;
-  background-color: var(--color-primary-darker);
-  color: #fff;
-
-  font-size: 1.15rem;
-  padding: 0.2rem 1rem;
-  border-radius: 6px;
-}
-
-button:hover {
-  background-color: var(--color-primary);
-  color: white;
-} */
-
 p {
   color: var(--color-p);
-}
-
-/* ----------------------------- */
-/* links - expand bottom border on hover */
-/* @see https://stackoverflow.com/questions/28623446/hover-effect-expand-bottom-border#:~:text=To%20expand%20the%20bottom%20border,1%20on%20the%20hover%20state.&text=The%20border%20and%20transition%20are,text%20and%20avoid%20adding%20markup. */
-.headerLink {
-  display: inline-block;
-  margin: 0;
-}
-.headerLink:after {
-  position: relative;
-  top: -3px;
-  display: block;
-  content: '';
-  border-bottom: solid 1px #000;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-
-  /* from left */
-  transform-origin: 0% 50%;
-
-  /* from right */
-  /* transform-origin: 100% 50%; */
-}
-.headerLink:hover:after {
-  transform: scaleX(1);
-}
-/* ----------------------------- */
-#homeLink {
-  font-size: 1.125rem;
 }
 
 /* DARK MODE */

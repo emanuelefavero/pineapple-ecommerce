@@ -1,3 +1,4 @@
+import styles from '@/styles/Header.module.scss'
 import Link from 'next/link'
 import appName from '@/utils/appName'
 
@@ -18,9 +19,8 @@ export default function Header() {
           <ul className='px-4 xs3:px-10'>
             <li>
               <Link
-                className='headerLink text-black hover:no-underline'
+                className={`${styles.headerLink} text-black hover:no-underline`}
                 href='/'
-                id='homeLink'
               >
                 Home
               </Link>
