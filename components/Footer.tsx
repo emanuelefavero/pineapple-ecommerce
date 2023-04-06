@@ -9,7 +9,7 @@ export default function Footer() {
             Pineapple <span>&copy;</span> {new Date().getFullYear()}{' '}
             <Link
               href='https://github.com/emanuelefavero'
-              className='text-indigo-300'
+              className='text-indigo-300 hover:text-indigo-400 hover:underline'
             >
               Emanuele Favero
             </Link>
