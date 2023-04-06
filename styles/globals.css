@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* DEFAULT STYLING */
 :root {
   --color-background: #0f1622;

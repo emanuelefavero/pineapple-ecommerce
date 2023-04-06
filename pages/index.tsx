@@ -1,13 +1,30 @@
-import { client } from '@/lib/client'
+import { client, urlFor } from '@/lib/client'
+import Image from 'next/image'
 
-export default function Home({ products }: any) {
+import { IProduct } from '@/types'
+
+interface IProps {
+  products: IProduct[]
+}
+
+export default function Home({ products }: IProps) {
   return (
     <>
       <h1>Home</h1>
       {products.map((product: any) => (
         <div key={product._id}>
+          <div className='relative w-56 h-56 bg-white rounded-2xl'>
+            <Image
+              className='object-contain p-5'
+              src={urlFor(product.image && product.image[0]).url()}
+              alt={product.name}
+              fill
+            />
+          </div>
+
           <h2>{product.name}</h2>
           <p>{product.details}</p>
+          <p>{product.price} &euro;</p>
         </div>
       ))}
     </>
