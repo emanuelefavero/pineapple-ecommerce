@@ -1,3 +1,4 @@
+import heroBanner from './heroBanner'
 import product from './product'
 
-export const schemaTypes = [product]
+export const schemaTypes = [heroBanner, product]
