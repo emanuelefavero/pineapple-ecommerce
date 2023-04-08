@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import Image from 'next/image'
 import { client, urlFor } from '@/lib/client'
+import { ProductCard } from '@/components'
 
 import { IProduct } from '@/types'
 
@@ -88,10 +89,23 @@ export default function ProductDetailPage({ product, products }: IProps) {
         </div>
       </section>
 
-      {/* EMPTY BORDER */}
-      <span className='border border-transparent h-1 w-1'></span>
-
-      {/* TODO: PRODUCT CARD CAROUSEL SECTION */}
+      {/* PRODUCT CARD CAROUSEL SECTION */}
+      <div className='px-7 pt-7'>
+        <h2 className='font-extrabold text-2xl wordSpacingCompact tracking-tight'>
+          You may also like:
+        </h2>
+      </div>
+      <div className='marquee overflow-x-hidden'>
+        <section className='container mx-auto flex gap-12 justify-center items-center py-16'>
+          {products.map((currentProduct: any) => (
+            <div key={currentProduct._id}>
+              {currentProduct._id !== product._id && (
+                <ProductCard product={currentProduct} />
+              )}
+            </div>
+          ))}
+        </section>
+      </div>
     </>
   )
 }

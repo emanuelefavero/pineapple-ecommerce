@@ -116,6 +116,29 @@ p {
   transition: all 0.15s ease-in-out;
 }
 
+/* TODO: Move to separate component */
+.marquee {
+  overflow: hidden;
+}
+
+.marquee section {
+  display: flex;
+  animation: marquee 20s linear infinite;
+}
+
+.marquee section:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
 /* DARK MODE */
 /* @media (prefers-color-scheme: dark) {
   html {
