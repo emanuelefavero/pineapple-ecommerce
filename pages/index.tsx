@@ -15,6 +15,8 @@ export default function Home({ products, heroBanner }: IProps) {
       <HeroBanner heroBanner={heroBanner} />
 
       {/* PRODUCTS */}
+      {/* TODO: Add an header in this section (e.g. Products:) */}
+      {/* TODO: Then valuate if it should be moved to own Component */}
       <section className='container mx-auto flex gap-12 flex-wrap justify-center items-center py-16'>
         {products.map((product: any) => (
           <div key={product._id}>
@@ -26,6 +28,7 @@ export default function Home({ products, heroBanner }: IProps) {
   )
 }
 
+// TODO: Try getStaticProps instead of getServerSideProps
 export const getServerSideProps = async () => {
   // Fetch all products and banner in the Sanity dataset
   const products = await client.fetch('*[_type == "product"]')
