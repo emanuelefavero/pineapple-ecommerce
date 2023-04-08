@@ -27,6 +27,7 @@ export default function HeroBanner({ heroBanner }: IProps) {
       {heroBanner && (
         <section>
           {discounted && (
+            // If discounted, show discount percentage and time left
             <p className='w-full bg-yellow-300 text-lg font-extrabold px-4 text-center border-yellow-400 border-b-4 select-none'>
               {discountPercentage}% {discountTime}
             </p>
@@ -47,10 +48,18 @@ export default function HeroBanner({ heroBanner }: IProps) {
 
               {/* Price */}
               <p className='text-4xl xs3:text-7xl font-black wordSpacingPrice tracking-tight text-emerald-700 mb-5'>
-                &euro; {discountPrice}{' '}
-                <span className='line-through text-red-800 text-xl xs3:text-3xl font-extrabold relative -top-4 -left-1 xs3:-top-9'>
-                  {originalPrice}
-                </span>
+                {discounted ? (
+                  // If discounted, show discount price and original price with strikethrough
+                  <>
+                    &euro; {discountPrice}{' '}
+                    <span className='line-through text-red-800 text-xl xs3:text-3xl font-extrabold relative -top-4 -left-1 xs3:-top-9'>
+                      {originalPrice}
+                    </span>
+                  </>
+                ) : (
+                  // If not discounted, show original price
+                  <>&euro; {originalPrice} </>
+                )}
               </p>
 
               {/* CTA Button */}
