@@ -99,10 +99,12 @@ export default function ProductDetailPage({ product, products }: IProps) {
         <section className='container mx-auto flex gap-12 justify-center items-center py-16'>
           {products.map((currentProduct: any) => (
             <>
-              {currentProduct._id !== product._id && (
+              {currentProduct._id !== product._id ? (
                 <div key={currentProduct._id}>
                   <ProductCard product={currentProduct} />
                 </div>
+              ) : (
+                <div key={currentProduct._id} className='hidden'></div>
               )}
             </>
           ))}
