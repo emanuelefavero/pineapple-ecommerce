@@ -90,6 +90,8 @@ export default function ProductDetailPage({ product, products }: IProps) {
       </section>
 
       {/* PRODUCT CARD CAROUSEL SECTION */}
+      {/* TODO: Add swipe gestures (left, right) to carousel */}
+      {/* TODO: Increase animation speed on smaller viewport width */}
       <div className='marquee overflow-x-hidden bg-slate-200'>
         <div className='px-7 pt-7'>
           <h2 className='font-extrabold text-2xl wordSpacingCompact tracking-tight select-none'>
