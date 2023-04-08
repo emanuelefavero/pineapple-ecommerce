@@ -90,19 +90,21 @@ export default function ProductDetailPage({ product, products }: IProps) {
       </section>
 
       {/* PRODUCT CARD CAROUSEL SECTION */}
-      <div className='px-7 pt-7'>
-        <h2 className='font-extrabold text-2xl wordSpacingCompact tracking-tight'>
-          You may also like:
-        </h2>
-      </div>
-      <div className='marquee overflow-x-hidden'>
+      <div className='marquee overflow-x-hidden bg-slate-200'>
+        <div className='px-7 pt-7'>
+          <h2 className='font-extrabold text-2xl wordSpacingCompact tracking-tight select-none'>
+            You may also like:
+          </h2>
+        </div>
         <section className='container mx-auto flex gap-12 justify-center items-center py-16'>
           {products.map((currentProduct: any) => (
-            <div key={currentProduct._id}>
+            <>
               {currentProduct._id !== product._id && (
-                <ProductCard product={currentProduct} />
+                <div key={currentProduct._id}>
+                  <ProductCard product={currentProduct} />
+                </div>
               )}
-            </div>
+            </>
           ))}
         </section>
       </div>
