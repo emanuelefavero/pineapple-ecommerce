@@ -20,7 +20,7 @@ export default function ProductDetailPage({ product, products }: IProps) {
         {/* PRODUCT IMAGE */}
         <div className='bg-white w-full h-80 sm:h-96 py-10 sm:w-1/2 flex items-center justify-center'>
           <Image
-            className='object-contain max-h-full max-w-full'
+            className='object-contain max-h-full max-w-full select-none'
             src={urlFor(product.image && product.image[index]).url()}
             alt={product.name}
             width={600}
@@ -41,7 +41,7 @@ export default function ProductDetailPage({ product, products }: IProps) {
                 width={50}
                 height={50}
                 src={urlFor(item).url()}
-                className={`h-16 sm:h-16 sm:w-20 object-contain`}
+                className={`h-16 sm:h-16 sm:w-20 object-contain select-none`}
                 // select image on mouse enter (hover state on desktop, click on mobile)
                 onMouseEnter={() => setIndex(i)}
                 alt={`${i} ${product.name}`}

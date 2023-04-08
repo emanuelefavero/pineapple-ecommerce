@@ -17,7 +17,7 @@ export default function ProductCard({ product }: IProps) {
         >
           <div className='relative w-56 h-full rounded-2xl mb-4 flex-1'>
             <Image
-              className='object-contain p-2 h-full'
+              className='object-contain p-2 h-full select-none'
               src={urlFor(product.image && product.image[0]).url()}
               alt={product.name}
               fill
