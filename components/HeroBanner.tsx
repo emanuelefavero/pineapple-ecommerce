@@ -26,12 +26,6 @@ export default function HeroBanner({ heroBanner }: IProps) {
     <>
       {heroBanner && (
         <section>
-          {discounted && (
-            // If discounted, show discount percentage and time left
-            <p className='w-full bg-yellow-300 text-lg font-extrabold px-4 text-center border-yellow-400 border-b-4 select-none'>
-              {discountPercentage}% {discountTime}
-            </p>
-          )}
           <div className='bg-white flex items-center border-black border-b-2 flex-col sm:flex-row'>
             {/* PRODUCT DETAILS */}
             {/* TODO: Fix responsive text position, margin etc.. on large screens */}
@@ -91,6 +85,13 @@ export default function HeroBanner({ heroBanner }: IProps) {
               </p>
             </div>
           </div>
+
+          {discounted && (
+            // If discounted, show discount percentage and time left
+            <p className='w-full bg-yellow-300 text-lg font-extrabold px-4 text-center border-yellow-400 border-b-4 select-none'>
+              {discountPercentage}% {discountTime}
+            </p>
+          )}
         </section>
       )}
     </>
