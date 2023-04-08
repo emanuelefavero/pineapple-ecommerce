@@ -52,7 +52,7 @@ export default function ProductDetailPage({ product, products }: IProps) {
 
         {/* PRODUCT DETAILS */}
         {/* TODO: Fix responsive text position, margin etc.. on large screens */}
-        <div className='w-full h-96 sm:h-96 sm:w-1/2 py-16 px-1 xs5:px-4 xs3:px-8 bg-indigo-100 border-black border-t-2 sm:border-l-2 sm:border-t-0'>
+        <div className='w-full h-96 xs5:h-custom-mobile xs2:h-96 sm:h-96 sm:w-1/2 py-16 sm:py-8 md:py-16 px-1 xs5:px-4 xs3:px-8 bg-indigo-100 border-black border-t-2 sm:border-l-2 sm:border-t-0'>
           <h1 className='wordSpacingTight text-3xl font-bold tracking-tight leading-8 mb-1'>
             {product.name}
           </h1>

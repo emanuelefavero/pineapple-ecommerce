@@ -29,6 +29,10 @@ module.exports = {
       // letterSpacing: {
       //   tighter2: '-0.01em',
       // },
+
+      height: {
+        'custom-mobile': '29rem',
+      },
     },
   },
   variants: {
