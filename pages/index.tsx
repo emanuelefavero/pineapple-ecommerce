@@ -41,7 +41,13 @@ export const getStaticProps = async () => {
       heroBanner,
     },
 
-    // Revalidate every 60 seconds
-    // revalidate: 60,
+    // Revalidate every 60 seconds***
+    revalidate: 60,
+
+    // TIP: ***ISR (Incremental Static Regeneration) is a new feature in Next.js that allows you to update existing pages by re-rendering them in the background as traffic comes in.
+
+    // It is needed with services like Sanity cause those services will not trigger a rebuild of the site when data is updated
+
+    // Revalidation will only happen if the page is visited (it will not impact resources when the page is not visited. With higher traffic you should consider higher revalidation times)
   }
 }
