@@ -114,7 +114,7 @@ export default function ProductDetailPage({ product, products }: IProps) {
   )
 }
 
-// -< getStaticPaths >- and -< getStaticProps >- methods
+// -< getStaticPaths >-
 // Fetch all products from sanity to generate paths (needed for SSG below)
 export const getStaticPaths: GetStaticPaths = async () => {
   const products = await client.fetch('*[_type == "product"]')
@@ -134,6 +134,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
+// -< getStaticProps >-
 // Fetch the product from sanity that matches the slug in the url
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params as { slug: string }

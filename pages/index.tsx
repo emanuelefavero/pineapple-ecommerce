@@ -28,8 +28,8 @@ export default function Home({ products, heroBanner }: IProps) {
   )
 }
 
-// TODO: Try getStaticProps instead of getServerSideProps
-export const getServerSideProps = async () => {
+// -< getStaticProps >-
+export const getStaticProps = async () => {
   // Fetch all products and banner in the Sanity dataset
   const products = await client.fetch('*[_type == "product"]')
   const heroBannerData = await client.fetch(`*[_type == "heroBanner"]`)
