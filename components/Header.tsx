@@ -1,6 +1,7 @@
 import styles from '@/styles/Header.module.scss'
 import { useState } from 'react' // ! move to context
 import Link from 'next/link'
+import Image from 'next/image'
 import { Cart } from '@/components'
 
 export default function Header() {
@@ -10,25 +11,51 @@ export default function Header() {
     <>
       {/* TODO: Add sticky position to Header */}
       <div className='w-full flex justify-center items-center flex-col bg-white text-black'>
-        {/* Header Big Text */}
-        {/* <div
-          className={`${unbounded.className} select-none pt-1 pb-1 pr-1 pl-1 text-xl xs5:text-xl xs4:text-4xl xs4:pb-1 xs3:text-5xl xs3:pb-3 xs3:pt-2 xs2:text-6xl xs2:pb-4 xs:text-7xl xs:pb-5 sm:text-8xl md:text-9xl`}
-        >
-          {appName}
-        </div> */}
+        <div className=' w-full flex justify-between items-center border-t-2 border-b-2 border-black font-medium p-0'>
+          <div className='flex px-4 xs3:px-10'>
+            {/* Header Logo */}
+            <Link className='active:scale-95' href='/'>
+              <Image
+                className='hover:brightness-105'
+                src='/pineapple.png'
+                alt='logo'
+                width={29}
+                height={29}
+              />
+            </Link>
 
-        {/* Header Menu */}
-        <div className='w-full flex justify-between items-center border-t-2 border-b-2 border-black font-medium p-0'>
-          <ul className='px-4 xs3:px-10'>
-            <li>
-              <Link
-                className={`${styles.headerLink} text-black hover:no-underline`}
-                href='/'
-              >
-                Home
-              </Link>
-            </li>
-          </ul>
+            {/* Header Menu */}
+            <ul className='px-7 flex'>
+              {/* TODO: Add real pages for these items (iPhone, Accessories, About Us) */}
+              {/* TODO: Move to separate container where you only need to pass the menu item text and link url */}
+              <li className='mr-5'>
+                <Link
+                  className={`${styles.headerLink} text-black wordSpacingTight tracking-tight hover:no-underline`}
+                  href='/'
+                >
+                  iPhone
+                </Link>
+              </li>
+
+              <li className='mr-5'>
+                <Link
+                  className={`${styles.headerLink} text-black wordSpacingTight tracking-tight hover:no-underline`}
+                  href='/'
+                >
+                  Accessories
+                </Link>
+              </li>
+
+              <li className='mr-5'>
+                <Link
+                  className={`${styles.headerLink} text-black wordSpacingTight tracking-tight hover:no-underline`}
+                  href='/'
+                >
+                  About Us
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           <button
             className='bg-black text-white px-4 xs3:px-14 py-3 text-lg border-l-2 border-black hover:bg-indigo-500'
