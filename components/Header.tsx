@@ -1,9 +1,13 @@
 import styles from '@/styles/Header.module.scss'
+import { useState } from 'react' // ! move to context
 import Link from 'next/link'
+import { Cart } from '@/components'
 
 export default function Header() {
+  const [showCart, setShowCart] = useState(false) // ! move to context
+
   return (
-    <div>
+    <>
       {/* TODO: Add sticky position to Header */}
       <div className='w-full flex justify-center items-center flex-col bg-white text-black'>
         {/* Header Big Text */}
@@ -29,11 +33,15 @@ export default function Header() {
           <button
             className='bg-black text-white px-4 xs3:px-14 py-3 text-lg border-l-2 border-black hover:bg-indigo-500'
             type='button'
+            onClick={() => setShowCart(!showCart)}
           >
             Cart
           </button>
         </div>
       </div>
-    </div>
+
+      {/* Cart */}
+      {showCart && <Cart />}
+    </>
   )
 }
