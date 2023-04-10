@@ -1,6 +1,7 @@
 import styles from '@/styles/Cart.module.scss'
-import Image from 'next/image'
 import Link from 'next/link'
+import Image from 'next/image'
+import { AiFillShopping } from 'react-icons/ai'
 import { useStateContext } from '@/context/StateContext'
 
 export default function Cart() {
@@ -31,10 +32,31 @@ export default function Cart() {
           </nav>
 
           {/* Cart Body */}
-          <div className='p-6'>
+          <div className='px-6 py-20'>
+            {/* EMPTY CART */}
+            <div className='w-full flex flex-col justify-center items-center mb-20'>
+              <AiFillShopping
+                size={133}
+                className='mb-2 text-slate-500 opacity-30'
+              />
+              <h3 className='text-xl font-extrabold wordSpacing tracking-tight select-none mb-1 text-slate-800'>
+                Your shopping bag is empty
+              </h3>
+              <Link href='/'>
+                <button
+                  type='button'
+                  onClick={() => setShowCart(false)}
+                  className={`${styles.buyButton} mt-8 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
+                >
+                  Continue Shopping
+                </button>
+              </Link>
+            </div>
+
+            {/* CART NOT EMPTY */}
             {/* Cart Card */}
             <div
-              className={`${styles.cartCard} relative bg-white text-black rounded-lg w-full px-4 py-3 flex justify-between items-center`}
+              className={`${styles.cartCard} relative bg-white text-black rounded-lg w-full px-4 py-3 flex justify-between items-center mb-8`}
             >
               <div className='flex justify-center items-center'>
                 {/* Image */}
@@ -97,7 +119,7 @@ export default function Cart() {
             {/* Buy Button */}
             <div className='w-full flex justify-center items-center'>
               <button
-                className={`${styles.buyButton} mt-8 text-3xl font-bold select-none text-white bg-emerald-500 py-1 px-20 rounded-lg uppercase border-emerald-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
+                className={`${styles.buyButton} mt-8 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
               >
                 Buy
               </button>
