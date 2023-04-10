@@ -13,7 +13,7 @@ export default function ProductCard({ product }: IProps) {
     <>
       <Link href={`/product/${product.slug.current}`}>
         <div
-          className={`${styles.ProductCard} bg-white text-black rounded-lg w-72 h-96 px-8 py-6 flex flex-col justify-between items-center`}
+          className={`${styles.ProductCard} bg-white text-black rounded-lg w-72 h-96 px-8 py-6 flex flex-col justify-between items-center relative active:top-[0.1rem]`}
         >
           <div className='relative w-56 h-full rounded-2xl mb-4 flex-1'>
             <Image

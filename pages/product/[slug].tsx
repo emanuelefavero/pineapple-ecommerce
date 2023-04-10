@@ -79,10 +79,10 @@ export default function ProductDetailPage({ product, products }: IProps) {
 
           {/* Product CTA */}
           <nav>
-            <button className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-white rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none mr-4 mb-2'>
+            <button className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-white rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none mr-4 mb-2 relative active:top-[0.08rem]'>
               Add To Cart
             </button>
-            <button className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none'>
+            <button className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none relative active:top-[0.08rem]'>
               Buy Now
             </button>
           </nav>
