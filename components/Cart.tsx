@@ -5,6 +5,9 @@ import { useStateContext } from '@/context/StateContext'
 
 export default function Cart() {
   const { setShowCart } = useStateContext()
+
+  // TODO: Add handle to close cart when clicking outside of it
+
   return (
     <>
       {/* Cart Overlay */}
@@ -56,13 +59,13 @@ export default function Cart() {
                   {/* Product Quantity */}
                   <nav className='flex justify-start items-center mb-1'>
                     <div className='flex'>
-                      <button className='w-8 h-8 rounded-full bg-black text-red-400 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
+                      <button className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'>
                         -
                       </button>
                       <p className='w-8 h-8 rounded-full bg-white text-black border-black border-2 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
                         1
                       </p>
-                      <button className='w-8 h-8 rounded-full bg-black text-green-400 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
+                      <button className='w-8 h-8 rounded-full bg-black text-green-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-green-300 active:text-green-500 active:scale-95'>
                         +
                       </button>
                     </div>
@@ -71,7 +74,7 @@ export default function Cart() {
               </div>
 
               {/* Product Price */}
-              <button className='absolute top-1 right-1 px-3 pt-0 pb-1 rounded-full text-4xl font-bold text-red-600'>
+              <button className='absolute top-1 right-1 px-3 pt-0 pb-1 rounded-full text-4xl font-bold text-red-600 hover:text-red-500 active:text-red-700 active:scale-105'>
                 x
               </button>
               <h3 className='absolute bottom-2 right-4 wordSpacingPrice text-4xl font-extrabold text-slate-800'>
