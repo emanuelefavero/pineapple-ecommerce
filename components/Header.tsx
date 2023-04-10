@@ -1,11 +1,11 @@
 import styles from '@/styles/Header.module.scss'
-import { useState } from 'react' // ! move to context
 import Link from 'next/link'
 import Image from 'next/image'
+import { useStateContext } from '@/context/StateContext'
 import { Cart } from '@/components'
 
 export default function Header() {
-  const [showCart, setShowCart] = useState(false) // ! move to context
+  const { showCart, setShowCart } = useStateContext()
 
   return (
     <>
@@ -68,8 +68,7 @@ export default function Header() {
       </div>
 
       {/* Cart */}
-      {/* {showCart && <Cart />} */}
-      {showCart && <Cart setShowCart={() => setShowCart(false)} />}
+      {showCart && <Cart />}
     </>
   )
 }
