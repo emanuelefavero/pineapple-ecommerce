@@ -1,3 +1,5 @@
+import styles from '@/styles/Cart.module.scss'
+
 export default function Cart({ setShowCart }: any) {
   return (
     <>
@@ -5,10 +7,13 @@ export default function Cart({ setShowCart }: any) {
         <div className='w-full xs2:w-10/12 sm:w-[37.5rem] h-full bg-indigo-200 float-right relative border-l-2 border-black'>
           <nav className='w-full bg-white px-4 py-4 border-b-2 border-black select-none flex justify-start items-center'>
             <button
-              className='text-3xl font-bold tracking-tight mr-2'
+              className={`${styles.closeCartButton} text-3xl font-bold tracking-tight mr-2`}
               onClick={setShowCart}
             >
-              &lt; Cart
+              <span className='transform transition-all group-hover:scale-90'>
+                &lt;
+              </span>{' '}
+              Cart
             </button>
             <span className='text-indigo-600 text-2xl font-bold tracking-tight relative -top-2'>
               (3 items)

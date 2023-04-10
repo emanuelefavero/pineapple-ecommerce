@@ -1,0 +1,15 @@
+.closeCartButton {
+  &:hover span {
+    color: black;
+    background-color: #e2e8f0;
+    border-radius: 999px;
+    padding: 0rem 0.7rem 0.1rem 0.55rem;
+
+    transition: all 0.15s ease-in-out;
+  }
+
+  &:active {
+    scale: 0.9;
+    transition: all 0.15s ease-in-out;
+  }
+}
