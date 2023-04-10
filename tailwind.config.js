@@ -22,6 +22,11 @@ module.exports = {
         xl: '1280px',
       },
 
+      animation: {
+        // * CUSTOM ANIMATIONS
+        'pulse-one-time': 'pulse 1s ease-in-out 1',
+      },
+
       wordSpacing: {
         tight: '-0.1em',
       },
