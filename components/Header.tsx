@@ -60,7 +60,7 @@ export default function Header() {
           <button
             className='bg-black text-white px-4 xs3:px-14 py-3 text-lg border-l-2 border-black hover:bg-indigo-500'
             type='button'
-            onClick={() => setShowCart(!showCart)}
+            onClick={() => setShowCart(true)}
           >
             Cart
           </button>
@@ -68,7 +68,8 @@ export default function Header() {
       </div>
 
       {/* Cart */}
-      {showCart && <Cart />}
+      {/* {showCart && <Cart />} */}
+      {showCart && <Cart setShowCart={() => setShowCart(false)} />}
     </>
   )
 }

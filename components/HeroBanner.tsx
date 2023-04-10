@@ -28,7 +28,7 @@ export default function HeroBanner({ heroBanner }: IProps) {
         <section>
           <div className='bg-white flex items-center border-black border-b-2 flex-col sm:flex-row'>
             {/* PRODUCT DETAILS */}
-            {/* TODO: Fix responsive text position, margin etc.. on large screens */}
+            {/* TODO: Fix responsive text position, margin etc.. on large screens (maybe justify center on small and medium screens and justify right on large screens) */}
             <div className='relative w-full h-96 sm:h-96 sm:w-1/2 py-12 px-1 xs5:px-4 xs3:px-8 lg:p-16 bg-fuchsia-300 border-black border-b-2 sm:border-r-2 sm:border-b-0'>
               {/* Hero Text */}
               <h2 className='text-lg xs4:text-3xl xs3:text-5xl font-bold wordSpacingTight tracking-tight uppercase select-none mb-2'>
