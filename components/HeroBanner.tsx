@@ -60,7 +60,7 @@ export default function HeroBanner({ heroBanner }: IProps) {
               <Link
                 href={`product/${slug.current}`}
                 id='heroButtonCTA'
-                className='bg-black text-white text-2xl wordSpacingTight tracking-tight font-medium px-11 py-2 rounded-md select-none'
+                className='bg-slate-900 text-white text-2xl wordSpacingTight tracking-tight font-medium px-11 py-2 rounded-md select-none border-slate-700 border-2 active:border-white'
                 style={{
                   fontSize: '1.5rem',
                 }}
