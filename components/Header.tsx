@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <>
-      {/* TODO: Add sticky position to Header */}
+      {/* TODO: Fix responsiveness on mobile viewport */}
       <div className='w-full flex justify-center items-center flex-col bg-white text-black'>
         <div className=' w-full flex justify-between items-center border-t-2 border-b-2 border-black font-medium p-0'>
           <div className='flex px-4 xs3:px-10'>
