@@ -29,11 +29,13 @@ export default function Cart() {
 
           {/* Cart Body */}
           <div className='p-6'>
-            <Link href={`/`}>
-              <div
-                className={`${styles.cartCard} bg-white text-black rounded-lg w-full px-6 py-2 flex justify-between items-center`}
-              >
-                <div className='flex justify-center items-center'>
+            {/* Cart Card */}
+            <div
+              className={`${styles.cartCard} relative bg-white text-black rounded-lg w-full px-4 py-3 flex justify-between items-center`}
+            >
+              <div className='flex justify-center items-center'>
+                {/* Image */}
+                <Link href={`/`}>
                   <div className='relative rounded-2xl mr-4'>
                     <Image
                       className='w-24 h-24 object-contain p-2 select-none'
@@ -43,17 +45,60 @@ export default function Cart() {
                       height={50}
                     />
                   </div>
+                </Link>
 
-                  <h2 className='text-2xl font-bold tracking-tight leading-8 mb-1'>
-                    iPhone 14 Blue
+                <div className='flex flex-col'>
+                  {/* Product Name */}
+                  <h2 className='text-2xl font-bold tracking-tight leading-8 mb-2 w-72'>
+                    iPhone 14 Pro Deep Purple 128GB
                   </h2>
-                </div>
 
-                <h3 className='wordSpacingPrice text-4xl font-extrabold text-slate-800'>
-                  &euro; 799
-                </h3>
+                  {/* Product Quantity */}
+                  <nav className='flex justify-start items-center mb-1'>
+                    <div className='flex'>
+                      <button className='w-8 h-8 rounded-full bg-black text-red-400 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
+                        -
+                      </button>
+                      <p className='w-8 h-8 rounded-full bg-white text-black border-black border-2 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
+                        1
+                      </p>
+                      <button className='w-8 h-8 rounded-full bg-black text-green-400 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
+                        +
+                      </button>
+                    </div>
+                  </nav>
+                </div>
               </div>
-            </Link>
+
+              {/* Product Price */}
+              <button className='absolute top-1 right-1 px-3 pt-0 pb-1 rounded-full text-4xl font-bold text-red-600'>
+                x
+              </button>
+              <h3 className='absolute bottom-2 right-4 wordSpacingPrice text-4xl font-extrabold text-slate-800'>
+                &euro; 799
+              </h3>
+            </div>
+
+            {/* Cart Total */}
+            <div className='w-full flex justify-between items-center mt-16 px-5'>
+              <h3
+                className={`${styles.total} text-slate-800 text-3xl font-extrabold wordSpacingTight tracking-tight leading-8 mb-1 mr-4`}
+              >
+                Total
+              </h3>
+              <h3 className='text-3xl font-extrabold wordSpacingTight tracking-tight leading-8 mb-1'>
+                &euro; 2,397
+              </h3>
+            </div>
+
+            {/* Buy Button */}
+            <div className='w-full flex justify-center items-center'>
+              <button
+                className={`${styles.buyButton} mt-8 text-3xl font-bold select-none text-white bg-emerald-500 py-1 px-20 rounded-lg uppercase border-emerald-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
+              >
+                Buy
+              </button>
+            </div>
           </div>
         </div>
       </section>

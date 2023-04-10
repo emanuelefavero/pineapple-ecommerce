@@ -18,11 +18,11 @@
   border: 2px solid #000;
   box-shadow: 4px 5px 0px 1px rgba(0, 0, 0, 1);
 
-  &:hover {
-    box-shadow: 2px 2px 0px 2px rgba(0, 0, 0, 1);
-    transform: translateX(3px) translateY(3px);
-    transition: all 0.2s ease-in-out;
-  }
+  // &:hover {
+  //   box-shadow: 2px 2px 0px 2px rgba(0, 0, 0, 1);
+  //   transform: translateX(3px) translateY(3px);
+  //   transition: all 0.2s ease-in-out;
+  // }
 
   h2 {
     word-spacing: -0.4rem;
@@ -30,5 +30,22 @@
 
   p {
     word-spacing: -0.2rem;
+  }
+}
+
+.total {
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    content: '';
+    // background-color: rgba(89, 0, 255, 0.266);
+    background-color: #818cf8;
+    opacity: 40%;
+    width: 68px;
+    height: 0.8rem;
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
   }
 }
