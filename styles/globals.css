@@ -126,6 +126,12 @@ p {
   animation: marquee 20s linear infinite;
 }
 
+@media screen and (max-width: 768px) {
+  .marquee section {
+    animation: marquee 10s linear infinite;
+  }
+}
+
 .marquee section:hover {
   animation-play-state: paused;
 }
