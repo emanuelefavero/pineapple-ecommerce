@@ -7,6 +7,7 @@ import { useStateContext } from '@/context/StateContext'
 export default function Cart() {
   const { setShowCart } = useStateContext()
 
+  // TODO: Fix responsive design on mobile
   // TODO: Add handle to close cart when clicking outside of it
 
   return (
@@ -32,7 +33,7 @@ export default function Cart() {
           </nav>
 
           {/* Cart Body */}
-          <div className='px-6 py-20'>
+          <div className='px-3 xs:px-6 py-20'>
             {/* EMPTY CART */}
             <div className='w-full flex flex-col justify-center items-center mb-20'>
               <AiFillShopping

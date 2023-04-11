@@ -62,8 +62,10 @@ export default function ProductDetailPage({ product, products }: IProps) {
           </h3>
 
           {/* Product Quantity */}
-          <nav className='flex justify-start items-center mb-4'>
-            <p className='text-md font-semibold select-none mr-3'>Quantity:</p>
+          <nav className='flex flex-col xs3:flex-row justify-start items-center mb-5'>
+            <p className='text-md font-semibold select-none mr-3 mb-3 xs3:mb-0'>
+              Quantity:
+            </p>
             <div className='flex'>
               <button className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'>
                 -
