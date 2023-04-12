@@ -14,6 +14,7 @@ export default function Header() {
     showHamburgerMenu,
     setShowHamburgerMenu,
     totalQuantities,
+    cartItems,
   } = useStateContext()
 
   return (
@@ -74,11 +75,14 @@ export default function Header() {
           </div>
 
           <button
-            className='bg-black text-white px-4 xs3:px-14 py-3 text-lg border-l-2 border-black hover:bg-indigo-500 active:bg-indigo-400'
+            className='flex bg-black text-white px-4 xs3:px-10 py-3 text-lg border-l-2 border-black hover:bg-indigo-500 active:bg-indigo-400'
             type='button'
             onClick={() => setShowCart(true)}
           >
-            Cart
+            <span>Cart</span>{' '}
+            <span className='text-yellow-300 hidden xs4:inline'>
+              (<span className='text-green-300'>{totalQuantities}</span>)
+            </span>
           </button>
         </div>
       </div>
