@@ -4,6 +4,7 @@ import Head from 'next/head'
 import appName from '@/utils/appName'
 import { StateContextProvider } from '@/context/StateContext'
 import { Header, Footer } from '@/components'
+import { Toaster } from 'react-hot-toast'
 import { Inconsolata } from 'next/font/google'
 import { Unbounded } from 'next/font/google'
 
@@ -40,6 +41,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         {/* MAIN */}
         <main className='bg-indigo-200'>
+          <Toaster />
           <Component {...pageProps} />
         </main>
 

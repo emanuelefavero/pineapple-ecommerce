@@ -2,6 +2,7 @@ import styles from '@/styles/Cart.module.scss'
 import { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { toast } from 'react-hot-toast'
 import { AiFillShopping } from 'react-icons/ai'
 import { urlFor } from '@/lib/client'
 import { useStateContext } from '@/context/StateContext'
@@ -35,7 +36,42 @@ export default function Cart() {
 
     const data = await response.json()
 
-    // toast.loading('Redirecting to checkout...')
+    toast.loading(
+      (t) => (
+        <span
+          // padding included here so that all the toast is clickable
+          style={{
+            paddingTop: '0.4rem',
+            paddingBottom: '0.4rem',
+            cursor: 'pointer',
+          }}
+          // dismiss toast on click
+          onClick={() => toast.dismiss(t.id)}
+        >
+          {/* any jsx content here */}
+          Redirecting to checkout...
+        </span>
+      ),
+      {
+        // TIP: By giving it an id, yu can dismiss it with toast.dismiss('custom-toast')
+        // TIP: When you give it an id, only one toast with that id can be shown at a time
+        id: 'toast-redirecting-to-checkout', // unique id
+
+        // duration: 2000,
+        style: {
+          // fontWeight: 'bold',
+          border: '1px solid #000',
+          paddingLeft: '1rem',
+          color: '#000',
+          backgroundColor: '#eef2ff',
+          userSelect: 'none',
+        },
+        iconTheme: {
+          primary: '#6366f1',
+          secondary: '#eef2ff',
+        },
+      }
+    )
 
     stripe?.redirectToCheckout({ sessionId: data.id })
   }

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
-import { IProduct, ICartItem } from '../types'
+import { toast } from 'react-hot-toast'
+import { ICartItem } from '@/types'
 
 // TODO: Move as much state as possible to this context file
 
@@ -64,6 +65,7 @@ export function StateContextProvider({
       setCartItems(updatedCartItems as ICartItem[])
     } else {
       // The product is not in the cart
+
       // Add the product to the cart with the quantity. (quantity was passed as a parameter)
       product.quantity = quantity
 
@@ -71,14 +73,50 @@ export function StateContextProvider({
       setCartItems([...cartItems, { ...product }])
     }
 
-    // TODO: Add a toast notification
-    // toast.success(`${qty} ${product.name} added to cart`)
+    toast.success(
+      (t) => (
+        <span
+          // padding included here so that all the toast is clickable
+          style={{
+            paddingTop: '0.4rem',
+            paddingBottom: '0.4rem',
+            cursor: 'pointer',
+          }}
+          // dismiss toast on click
+          onClick={() => toast.dismiss(t.id)}
+        >
+          {/* any jsx content here */}
+          {qty} {product.name} added to cart
+        </span>
+      ),
+      {
+        // TIP: By giving it an id, yu can dismiss it with toast.dismiss('custom-toast')
+        // TIP: When you give it an id, only one toast with that id can be shown at a time
+        id: 'toast-add-to-cart', // unique id
+
+        // duration: 2000,
+        style: {
+          // fontWeight: 'bold',
+          border: '1px solid #000',
+          paddingLeft: '1rem',
+          color: '#000',
+          backgroundColor: '#eef2ff',
+          userSelect: 'none',
+        },
+        iconTheme: {
+          primary: '#6366f1',
+          secondary: '#eef2ff',
+        },
+      }
+    )
   }
 
   const updateCartItemQuantity = (id: string, value: string) => {
     //  find the index of the product in the cartItems array
     const index = cartItems.findIndex((product) => product._id === id)
-    const newCartItems = [...cartItems] // create a new array to avoid mutating the original cartItems array
+
+    // create a new array to avoid mutating the original cartItems array
+    const newCartItems = [...cartItems]
 
     // if the value is 'inc', increase the quantity by 1
     if (value === 'inc') {
@@ -87,7 +125,8 @@ export function StateContextProvider({
         quantity: newCartItems[index].quantity + 1,
       }
 
-      newCartItems.splice(index, 1, foundProduct) // replace the item at the same index with the new item
+      // replace the item at the same index with the new item
+      newCartItems.splice(index, 1, foundProduct)
       setCartItems(newCartItems)
 
       // update the total price and total quantity
@@ -113,7 +152,9 @@ export function StateContextProvider({
   // remove cart item and update total price and total quantity
   const removeCartItem = (id: string) => {
     const index = cartItems.findIndex((product) => product._id === id)
-    const newCartItems = [...cartItems] // copy the cart items to then use splice to remove the item (splice removes the original so we need to copy it first)
+
+    // copy the cart items to then use splice to remove the item (splice removes the original so we need to copy it first)
+    const newCartItems = [...cartItems]
     const foundProduct = newCartItems[index]
 
     newCartItems.splice(index, 1)
