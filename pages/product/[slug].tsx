@@ -13,8 +13,14 @@ interface IProps {
 }
 
 export default function ProductDetailPage({ product, products }: IProps) {
-  const { qty, onAdd } = useStateContext()
+  const { qty, decQty, incQty, onAdd, setShowCart } = useStateContext()
   const [index, setIndex] = useState(0)
+
+  const handleBuyNow = () => {
+    onAdd(product, qty)
+
+    setShowCart(true)
+  }
 
   return (
     <>
@@ -69,13 +75,19 @@ export default function ProductDetailPage({ product, products }: IProps) {
               Quantity:
             </p>
             <div className='flex'>
-              <button className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'>
+              <button
+                className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'
+                onClick={decQty}
+              >
                 -
               </button>
               <p className='w-8 h-8 rounded-full bg-white text-black border-black border-2 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
                 {qty}
               </p>
-              <button className='w-8 h-8 rounded-full bg-black text-green-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-green-300 active:text-green-500 active:scale-95'>
+              <button
+                className='w-8 h-8 rounded-full bg-black text-green-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-green-300 active:text-green-500 active:scale-95'
+                onClick={incQty}
+              >
                 +
               </button>
             </div>
@@ -91,7 +103,10 @@ export default function ProductDetailPage({ product, products }: IProps) {
             >
               Add To Cart
             </button>
-            <button className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none relative active:top-[0.08rem]'>
+            <button
+              className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none relative active:top-[0.08rem]'
+              onClick={handleBuyNow}
+            >
               Buy Now
             </button>
           </nav>
