@@ -13,8 +13,11 @@ export default function HamburgerMenu() {
         {/* Hamburger Menu */}
         <div className='w-full xs2:w-10/12 sm:w-[37.5rem] h-full bg-indigo-200 float-right relative border-l-2 border-black overflow-y-scroll'>
           {/* HamburgerMenu Header */}
-          <nav className='w-full bg-white px-4 py-4 border-b-2 border-black select-none flex justify-start items-center'>
-            <button onClick={() => setShowHamburgerMenu(false)}>
+          <nav className='w-full bg-white px-4 py-4 border-b-2 border-black select-none flex flex-col xs5:flex-row justify-start items-center'>
+            <button
+              onClick={() => setShowHamburgerMenu(false)}
+              className='mb-1 xs5:mb-0'
+            >
               <CgClose size={30} />
             </button>
             <button
@@ -26,10 +29,10 @@ export default function HamburgerMenu() {
           </nav>
 
           {/* Hamburger Menu Items */}
-          <ul className='px-7 flex flex-col justify-center items-center pt-10 mb-6'>
+          <ul className='px-1 xs3:px-7 flex flex-col justify-center items-center pt-10 mb-6'>
             {/* TODO: Add real pages for these items (iPhone, Accessories, About Us) */}
             {/* TODO: Move to separate container where you only need to pass the menu item text and link url */}
-            <li className='mr-5 mb-1'>
+            <li className='mb-1'>
               <Link
                 className={`${styles.hamburgerMenuLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
                 href='/'
@@ -39,7 +42,7 @@ export default function HamburgerMenu() {
               </Link>
             </li>
 
-            <li className='mr-5 mb-1'>
+            <li className='mb-1'>
               <Link
                 className={`${styles.hamburgerMenuLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
                 href='/'
@@ -49,7 +52,7 @@ export default function HamburgerMenu() {
               </Link>
             </li>
 
-            <li className='mr-5 mb-1'>
+            <li className='mb-1'>
               <Link
                 className={`${styles.hamburgerMenuLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
                 href='/'
