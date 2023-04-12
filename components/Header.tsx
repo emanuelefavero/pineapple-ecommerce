@@ -2,7 +2,6 @@ import styles from '@/styles/Header.module.scss'
 import Link from 'next/link'
 import Image from 'next/image'
 import { RxHamburgerMenu } from 'react-icons/rx'
-import { CgClose } from 'react-icons/cg'
 import { useStateContext } from '@/context/StateContext'
 import { Cart } from '@/components'
 import { HamburgerMenu } from '@/components'
@@ -14,7 +13,6 @@ export default function Header() {
     showHamburgerMenu,
     setShowHamburgerMenu,
     totalQuantities,
-    cartItems,
   } = useStateContext()
 
   return (
