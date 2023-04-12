@@ -18,9 +18,9 @@ export default function ProductCard({ product }: IProps) {
     <div onClick={() => setQty(1)}>
       <Link href={`/product/${product.slug.current}`}>
         <div
-          className={`${styles.ProductCard} bg-white text-black rounded-lg w-72 h-96 px-8 py-6 flex flex-col justify-between items-center relative active:top-[0.1rem]`}
+          className={`${styles.ProductCard} bg-white text-black rounded-lg w-full xs3:w-72 h-96 px-4 xs3:px-8 py-3 xs3:py-6 flex flex-col justify-between items-center relative active:top-[0.1rem]`}
         >
-          <div className='relative w-56 h-full rounded-2xl mb-4 flex-1'>
+          <div className='relative w-full xs3:w-56 h-full rounded-2xl mb-4 flex-1'>
             <Image
               className='object-contain p-2 h-full select-none'
               src={urlFor(product.image && product.image[0]).url()}
