@@ -7,7 +7,6 @@ import { useStateContext } from '@/context/StateContext'
 export default function Cart() {
   const { setShowCart } = useStateContext()
 
-  // TODO: Fix responsive design on mobile
   // TODO: Add handle to close cart when clicking outside of it
 
   return (
@@ -15,7 +14,7 @@ export default function Cart() {
       {/* Cart Overlay */}
       <section className='w-full h-full bg-slate-900 bg-opacity-80 fixed right-0 top-0 z-50 transition-all duration-1000 ease-in-out'>
         {/* Cart */}
-        <div className='w-full xs2:w-10/12 sm:w-[37.5rem] h-full bg-indigo-200 float-right relative border-l-2 border-black'>
+        <div className='w-full xs2:w-10/12 sm:w-[37.5rem] h-full bg-indigo-200 float-right relative border-l-2 border-black overflow-y-scroll'>
           {/* Cart Header */}
           <nav className='w-full bg-white px-4 py-4 border-b-2 border-black select-none flex justify-start items-center'>
             <button
@@ -59,7 +58,7 @@ export default function Cart() {
             <div
               className={`${styles.cartCard} relative bg-white text-black rounded-lg w-full px-4 py-3 flex justify-between items-center mb-8`}
             >
-              <div className='flex justify-center items-center'>
+              <div className='flex flex-col xs:flex-row justify-center items-start xs:items-center'>
                 {/* Image */}
                 <Link href={`/`}>
                   <div className='relative rounded-2xl mr-4'>
@@ -75,12 +74,12 @@ export default function Cart() {
 
                 <div className='flex flex-col'>
                   {/* Product Name */}
-                  <h2 className='text-2xl font-bold tracking-tight leading-8 mb-2 w-72'>
+                  <h2 className='text-2xl font-bold tracking-tight leading-8 mb-2 flex flex-wrap break-words'>
                     iPhone 14 Pro Deep Purple 128GB
                   </h2>
 
                   {/* Product Quantity */}
-                  <nav className='flex justify-start items-center mb-1'>
+                  <nav className='flex justify-start items-center mb-10 xs4:mb-1'>
                     <div className='flex'>
                       <button className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'>
                         -
@@ -106,9 +105,9 @@ export default function Cart() {
             </div>
 
             {/* Cart Total */}
-            <div className='w-full flex justify-between items-center mt-16 px-5'>
+            <div className='w-full flex flex-col xs4:flex-row justify-between items-center mt-16 px-5'>
               <h3
-                className={`${styles.total} text-slate-800 text-3xl font-extrabold wordSpacingTight tracking-tight leading-8 mb-1 mr-4`}
+                className={`${styles.total} text-slate-800 text-3xl font-extrabold wordSpacingTight tracking-tight leading-8 mb-4 xs:4mb-1 mr-4`}
               >
                 Total
               </h3>
