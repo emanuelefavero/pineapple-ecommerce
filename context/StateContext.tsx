@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react'
+import { IProduct, ICartItem } from '../types'
 
 // TODO: Move as much state as possible to this context file
 
@@ -8,8 +9,8 @@ const StateContext = createContext({
   setShowCart: (showCart: boolean) => {},
   showHamburgerMenu: false as boolean,
   setShowHamburgerMenu: (showHamburgerMenu: boolean) => {},
-  cartItems: [] as any[],
-  setCartItems: (cartItems: any[]) => {},
+  cartItems: [] as ICartItem[],
+  setCartItems: (cartItems: ICartItem[]) => {},
   totalPrice: 0 as number,
   setTotalPrice: (totalPrice: number) => {},
   totalQuantities: 0 as number,
@@ -18,8 +19,8 @@ const StateContext = createContext({
   setQty: (qty: number) => {},
   incQty: () => {},
   decQty: () => {},
-  onAdd: (product: any, quantity: number) => {},
-  toggleCartItemQuantity: (id: string, value: string) => {},
+  onAdd: (product: ICartItem, quantity: number) => {},
+  updateCartItemQuantity: (id: string, value: string) => {},
   removeCartItem: (id: string) => {},
 })
 
@@ -31,17 +32,17 @@ export function StateContextProvider({
 }) {
   const [showCart, setShowCart] = useState(false)
   const [showHamburgerMenu, setShowHamburgerMenu] = useState(false)
-  const [cartItems, setCartItems] = useState<any[]>([])
+  const [cartItems, setCartItems] = useState<ICartItem[]>([])
   const [totalPrice, setTotalPrice] = useState(0)
   const [totalQuantities, setTotalQuantities] = useState(0)
   const [qty, setQty] = useState(1)
 
   // When the user adds a product to the cart
-  const onAdd = (product: any, quantity: number) => {
+  const onAdd = (product: ICartItem, quantity: number) => {
     // Find the item in the cart
     const checkProductInCart = cartItems.find(
       // Check if the item's _id is the same as the product's _id
-      (item: any) => item._id === product._id
+      (item: ICartItem) => item._id === product._id
     )
 
     // Update the total price and total quantity of the cart
@@ -51,7 +52,7 @@ export function StateContextProvider({
     // If the product is already in the cart
     if (checkProductInCart) {
       // Find the product in the cart and increase the quantity.
-      const updatedCartItems = cartItems.map((cartProduct: any) => {
+      const updatedCartItems = cartItems.map((cartProduct: ICartItem) => {
         if (cartProduct._id === product._id)
           return {
             ...cartProduct,
@@ -60,7 +61,7 @@ export function StateContextProvider({
       })
 
       // Replace the cart items with the updated cart items.
-      setCartItems(updatedCartItems as any)
+      setCartItems(updatedCartItems as ICartItem[])
     } else {
       // The product is not in the cart
       // Add the product to the cart with the quantity. (quantity was passed as a parameter)
@@ -74,25 +75,33 @@ export function StateContextProvider({
     // toast.success(`${qty} ${product.name} added to cart`)
   }
 
-  const toggleCartItemQuantity = (id: any, value: any) => {
+  const updateCartItemQuantity = (id: string, value: string) => {
+    //  find the index of the product in the cartItems array
     const index = cartItems.findIndex((product) => product._id === id)
     const newCartItems = [...cartItems] // create a new array to avoid mutating the original cartItems array
 
+    // if the value is 'inc', increase the quantity by 1
     if (value === 'inc') {
       const foundProduct = {
         ...newCartItems[index],
         quantity: newCartItems[index].quantity + 1,
-      } // increase the quantity value by 1
-      newCartItems.splice(index, 1, foundProduct) // replace the item at the same index
+      }
+
+      newCartItems.splice(index, 1, foundProduct) // replace the item at the same index with the new item
       setCartItems(newCartItems)
+
+      // update the total price and total quantity
       setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price)
       setTotalQuantities((prevTotalQuantities) => prevTotalQuantities + 1)
+
+      // if the value is 'dec', decrease the quantity by 1
     } else if (value === 'dec') {
       if (newCartItems[index].quantity > 1) {
         const foundProduct = {
           ...newCartItems[index],
           quantity: newCartItems[index].quantity - 1,
         }
+
         newCartItems.splice(index, 1, foundProduct)
         setCartItems(newCartItems)
         setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price)
@@ -102,10 +111,11 @@ export function StateContextProvider({
   }
 
   // remove cart item and update total price and total quantity
-  const removeCartItem = (id: any) => {
+  const removeCartItem = (id: string) => {
     const index = cartItems.findIndex((product) => product._id === id)
     const newCartItems = [...cartItems] // copy the cart items to then use splice to remove the item (splice removes the original so we need to copy it first)
     const foundProduct = newCartItems[index]
+
     newCartItems.splice(index, 1)
     setCartItems(newCartItems)
     setTotalPrice(
@@ -146,7 +156,7 @@ export function StateContextProvider({
         incQty,
         decQty,
         onAdd,
-        toggleCartItemQuantity,
+        updateCartItemQuantity,
         removeCartItem,
       }}
     >

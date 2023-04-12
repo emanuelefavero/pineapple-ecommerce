@@ -13,7 +13,7 @@ export default function Cart() {
     totalQuantities,
     setShowCart,
     cartItems,
-    toggleCartItemQuantity,
+    updateCartItemQuantity,
     removeCartItem,
   } = useStateContext()
   const cartRef = useRef() as React.MutableRefObject<HTMLInputElement>
@@ -37,7 +37,7 @@ export default function Cart() {
 
     // toast.loading('Redirecting to checkout...')
 
-    stripe.redirectToCheckout({ sessionId: data.id })
+    stripe?.redirectToCheckout({ sessionId: data.id })
   }
 
   // TODO: Add handle to close cart when clicking outside of it
@@ -126,7 +126,7 @@ export default function Cart() {
                             <button
                               className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'
                               onClick={() =>
-                                toggleCartItemQuantity(item._id, 'dec')
+                                updateCartItemQuantity(item._id, 'dec')
                               }
                             >
                               -
@@ -137,7 +137,7 @@ export default function Cart() {
                             <button
                               className='w-8 h-8 rounded-full bg-black text-green-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-green-300 active:text-green-500 active:scale-95'
                               onClick={() =>
-                                toggleCartItemQuantity(item._id, 'inc')
+                                updateCartItemQuantity(item._id, 'inc')
                               }
                             >
                               +
