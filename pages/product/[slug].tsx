@@ -74,7 +74,7 @@ export default function ProductDetailPage({ product, products }: IProps) {
               <p className='text-md font-semibold select-none mr-3 mb-3 xs3:mb-0'>
                 Quantity:
               </p>
-              <div className='flex'>
+              <div className='flex flex-col xs5:flex-row'>
                 <button
                   className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'
                   onClick={decQty}
