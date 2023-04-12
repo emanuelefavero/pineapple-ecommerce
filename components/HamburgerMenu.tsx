@@ -17,6 +17,12 @@ export default function HamburgerMenu() {
             <button onClick={() => setShowHamburgerMenu(false)}>
               <CgClose size={30} />
             </button>
+            <button
+              className={`text-3xl font-bold tracking-tight pl-3 mr-2`}
+              onClick={() => setShowHamburgerMenu(false)}
+            >
+              Menu
+            </button>
           </nav>
 
           {/* Hamburger Menu Items */}

@@ -28,7 +28,6 @@ export default function Header() {
             </Link>
 
             {/* Header Hamburger Menu Button */}
-            {/* TODO: Add menu on button click */}
             <button
               onClick={() => setShowHamburgerMenu(!showHamburgerMenu)}
               className='block sm:hidden'
