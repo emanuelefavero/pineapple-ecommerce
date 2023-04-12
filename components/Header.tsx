@@ -21,7 +21,10 @@ export default function Header() {
         <div className='relative w-full flex justify-between items-center border-t-2 border-b-2 border-black font-medium p-0'>
           <div className='w-full flex justify-between px-4 xs3:px-10'>
             {/* Header Logo */}
-            <Link className='animate-pulse-one-time active:scale-95' href='/'>
+            <Link
+              className='animate-pulse-one-time hidden xs4:inline active:scale-95'
+              href='/'
+            >
               <Image
                 className='hover:brightness-105'
                 src='/pineapple.png'
