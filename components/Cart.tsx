@@ -52,9 +52,9 @@ export default function Cart() {
         {/* Cart */}
         <div className='w-full xs2:w-10/12 sm:w-[37.5rem] h-full bg-indigo-200 float-right relative border-l-2 border-black overflow-y-scroll'>
           {/* Cart Header */}
-          <nav className='w-full bg-white px-4 py-4 border-b-2 border-black select-none flex justify-start items-center'>
+          <nav className='w-full bg-white px-4 py-4 border-b-2 border-black select-none flex flex-col xs4:flex-row justify-start items-center'>
             <button
-              className={`${styles.closeCartButton} text-3xl font-bold tracking-tight mr-2`}
+              className={`${styles.closeCartButton} text-3xl font-bold tracking-tight mb-2 xs4:mb-0 xs4:mr-2`}
               onClick={() => setShowCart(false)}
             >
               <span className='transform transition-all group-hover:scale-90'>
@@ -98,7 +98,7 @@ export default function Cart() {
                 <>
                   <div
                     key={item._id}
-                    className={`${styles.cartCard} relative bg-white text-black rounded-lg w-full px-4 py-3 flex justify-between items-center mb-8`}
+                    className={`${styles.cartCard} relative bg-white text-black rounded-lg w-full px-4 py-10 xs4:py-3 flex justify-between items-center mb-8`}
                   >
                     <div className='flex flex-col xs:flex-row justify-center items-start xs:items-center'>
                       {/* Image */}
@@ -122,7 +122,7 @@ export default function Cart() {
 
                         {/* Product Quantity */}
                         <nav className='flex justify-start items-center mb-10 xs4:mb-1'>
-                          <div className='flex'>
+                          <div className='flex flex-col xs4:flex-row'>
                             <button
                               className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'
                               onClick={() =>
