@@ -59,57 +59,58 @@ export default function ProductDetailPage({ product, products }: IProps) {
         </nav>
 
         {/* PRODUCT DETAILS */}
-        {/* TODO: Fix responsive text position, margin etc.. on large screens */}
-        <div className='w-full h-96 xs5:h-custom-mobile xs2:h-96 sm:h-96 sm:w-1/2 py-16 sm:py-8 md:py-16 px-1 xs5:px-4 xs3:px-8 bg-indigo-100 border-black border-t-2 sm:border-l-2 sm:border-t-0'>
-          <h1 className='wordSpacingTight text-3xl font-bold tracking-tight leading-8 mb-1'>
-            {product.name}
-          </h1>
-          <p className='text-lg font-normal'>{product.details}</p>
-          <h3 className='wordSpacingPrice text-4xl font-extrabold mb-4'>
-            {product.price} &euro;
-          </h3>
+        <div className='w-full flex justify-center items-center h-96 xs5:h-custom-mobile xs2:h-96 sm:h-96 sm:w-1/2 py-16 sm:py-8 md:py-16 px-1 xs5:px-4 xs3:px-8 bg-indigo-100 border-black border-t-2 sm:border-l-2 sm:border-t-0'>
+          <div>
+            <h1 className='wordSpacingTight text-3xl font-bold tracking-tight leading-8 mb-1'>
+              {product.name}
+            </h1>
+            <p className='text-lg font-normal'>{product.details}</p>
+            <h3 className='wordSpacingPrice text-4xl font-extrabold mb-4'>
+              {product.price} &euro;
+            </h3>
 
-          {/* Product Quantity */}
-          <nav className='flex flex-col xs3:flex-row justify-start items-center mb-5'>
-            <p className='text-md font-semibold select-none mr-3 mb-3 xs3:mb-0'>
-              Quantity:
-            </p>
-            <div className='flex'>
-              <button
-                className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'
-                onClick={decQty}
-              >
-                -
-              </button>
-              <p className='w-8 h-8 rounded-full bg-white text-black border-black border-2 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
-                {qty}
+            {/* Product Quantity */}
+            <nav className='flex flex-col xs3:flex-row justify-start items-center mb-5'>
+              <p className='text-md font-semibold select-none mr-3 mb-3 xs3:mb-0'>
+                Quantity:
               </p>
-              <button
-                className='w-8 h-8 rounded-full bg-black text-green-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-green-300 active:text-green-500 active:scale-95'
-                onClick={incQty}
-              >
-                +
-              </button>
-            </div>
-          </nav>
+              <div className='flex'>
+                <button
+                  className='w-8 h-8 rounded-full bg-black text-red-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-red-300 active:text-red-500 active:scale-95'
+                  onClick={decQty}
+                >
+                  -
+                </button>
+                <p className='w-8 h-8 rounded-full bg-white text-black border-black border-2 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
+                  {qty}
+                </p>
+                <button
+                  className='w-8 h-8 rounded-full bg-black text-green-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-green-300 active:text-green-500 active:scale-95'
+                  onClick={incQty}
+                >
+                  +
+                </button>
+              </div>
+            </nav>
 
-          {/* Product CTA */}
-          <nav>
-            <button
-              className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-white rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none mr-4 mb-2 relative active:top-[0.08rem]'
-              onClick={() => {
-                onAdd(product, qty)
-              }}
-            >
-              Add To Cart
-            </button>
-            <button
-              className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none relative active:top-[0.08rem]'
-              onClick={handleBuyNow}
-            >
-              Buy Now
-            </button>
-          </nav>
+            {/* Product CTA */}
+            <nav>
+              <button
+                className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-white rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none mr-4 mb-2 relative active:top-[0.08rem]'
+                onClick={() => {
+                  onAdd(product, qty)
+                }}
+              >
+                Add To Cart
+              </button>
+              <button
+                className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none relative active:top-[0.08rem]'
+                onClick={handleBuyNow}
+              >
+                Buy Now
+              </button>
+            </nav>
+          </div>
         </div>
       </section>
 
