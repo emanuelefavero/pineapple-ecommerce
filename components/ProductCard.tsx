@@ -2,6 +2,8 @@ import styles from '@/styles/ProductCard.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import { urlFor } from '@/lib/client'
+import { useStateContext } from '@/context/StateContext'
+
 import { IProduct } from '@/types'
 
 interface IProps {
@@ -9,8 +11,11 @@ interface IProps {
 }
 
 export default function ProductCard({ product }: IProps) {
+  const { setQty } = useStateContext()
+
   return (
-    <>
+    // Set quantity to 1 when clicking on the product card
+    <div onClick={() => setQty(1)}>
       <Link href={`/product/${product.slug.current}`}>
         <div
           className={`${styles.ProductCard} bg-white text-black rounded-lg w-72 h-96 px-8 py-6 flex flex-col justify-between items-center relative active:top-[0.1rem]`}
@@ -37,6 +42,6 @@ export default function ProductCard({ product }: IProps) {
           </div>
         </div>
       </Link>
-    </>
+    </div>
   )
 }

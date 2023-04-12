@@ -8,8 +8,13 @@ import { Cart } from '@/components'
 import { HamburgerMenu } from '@/components'
 
 export default function Header() {
-  const { showCart, setShowCart, showHamburgerMenu, setShowHamburgerMenu } =
-    useStateContext()
+  const {
+    showCart,
+    setShowCart,
+    showHamburgerMenu,
+    setShowHamburgerMenu,
+    totalQuantities,
+  } = useStateContext()
 
   return (
     <>

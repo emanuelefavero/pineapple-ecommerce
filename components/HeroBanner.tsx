@@ -58,7 +58,7 @@ export default function HeroBanner({ heroBanner }: IProps) {
 
               {/* CTA Button */}
               <Link
-                href={`product/${slug.current}`}
+                href={`/product/${slug.current}`}
                 id='heroButtonCTA'
                 className='bg-slate-900 text-white text-2xl wordSpacingTight tracking-tight font-medium px-11 py-2 rounded-md select-none border-slate-700 border-2 active:border-white'
                 style={{
