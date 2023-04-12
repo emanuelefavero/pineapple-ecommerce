@@ -1,12 +1,19 @@
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { ICartItem } from '@/types'
 import Stripe from 'stripe'
 
-const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY)
+const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY as string, {
+  apiVersion: '2022-11-15',
+})
 
 // TIP: You can use 4242 4242 4242 4242 as a test card number with 424 as the CVC and any future date for the expiration date in the stripe checkout form for testing purposes
 // TIP: Remember to set stripe to test mode in the dashboard
 // TIP: You can go to the stripe settings / Business settings / Customer emails and enable "Successful payments" to send an email to the customer when the payment is successful (the email will not be sent in test mode)
 
-export default async function handler(req, res) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === 'POST') {
     // console.log(req.body)
 
@@ -24,7 +31,7 @@ export default async function handler(req, res) {
           { shipping_rate: 'shr_1Mp2HsKA1UjcyalEY6GCZK8A' },
         ],
 
-        line_items: req.body.map((item) => {
+        line_items: req.body.map((item: ICartItem) => {
           // access sanity image
           // @link https://www.sanity.io/manage
           const img = item.image[0].asset._ref
@@ -65,10 +72,10 @@ export default async function handler(req, res) {
       }
 
       // Create Checkout Sessions from body params.
-      const session = await stripe.checkout.sessions.create(params)
+      const session = await stripe.checkout.sessions.create(params as any)
 
       res.status(200).json(session) // return session
-    } catch (err) {
+    } catch (err: any) {
       res.status(err.statusCode || 500).json(err.message)
     }
   } else {

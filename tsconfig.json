@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/stripe.js", "lib/getStripe.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/stripe.ts", "lib/getStripe.ts"],
   "exclude": ["node_modules"]
 }
