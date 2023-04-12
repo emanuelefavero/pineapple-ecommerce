@@ -3,6 +3,7 @@ import { GetStaticProps, GetStaticPaths } from 'next'
 import Image from 'next/image'
 import { client, urlFor } from '@/lib/client'
 import { ProductCard } from '@/components'
+import { useStateContext } from '@/context/StateContext'
 
 import { IProduct } from '@/types'
 
@@ -12,6 +13,7 @@ interface IProps {
 }
 
 export default function ProductDetailPage({ product, products }: IProps) {
+  const { qty, onAdd } = useStateContext()
   const [index, setIndex] = useState(0)
 
   return (
@@ -71,7 +73,7 @@ export default function ProductDetailPage({ product, products }: IProps) {
                 -
               </button>
               <p className='w-8 h-8 rounded-full bg-white text-black border-black border-2 text-2xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1'>
-                1
+                {qty}
               </p>
               <button className='w-8 h-8 rounded-full bg-black text-green-400 text-3xl font-semibold text-center flex justify-center items-center select-none p-1 mr-1 hover:text-green-300 active:text-green-500 active:scale-95'>
                 +
@@ -81,7 +83,12 @@ export default function ProductDetailPage({ product, products }: IProps) {
 
           {/* Product CTA */}
           <nav>
-            <button className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-white rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none mr-4 mb-2 relative active:top-[0.08rem]'>
+            <button
+              className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-white rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none mr-4 mb-2 relative active:top-[0.08rem]'
+              onClick={() => {
+                onAdd(product, qty)
+              }}
+            >
               Add To Cart
             </button>
             <button className='productDetailButton wordSpacingCompact text-lg font-extrabold tracking-tight bg-amber-300 rounded-md py-1 w-full xs2:w-max px-4 border-black border-2 select-none relative active:top-[0.08rem]'>

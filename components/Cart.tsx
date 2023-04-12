@@ -3,9 +3,32 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { AiFillShopping } from 'react-icons/ai'
 import { useStateContext } from '@/context/StateContext'
+import getStripe from '@/lib/getStripe'
 
 export default function Cart() {
-  const { setShowCart } = useStateContext()
+  const { setShowCart, cartItems } = useStateContext()
+
+  // STRIPE CHECKOUT
+  const handleCheckout = async () => {
+    const stripe = await getStripe()
+
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartItems),
+    })
+
+    if (response.status === 500) return
+    // if (response.statusCode === 500) return
+
+    const data = await response.json()
+
+    // toast.loading('Redirecting to checkout...')
+
+    stripe.redirectToCheckout({ sessionId: data.id })
+  }
 
   // TODO: Add handle to close cart when clicking outside of it
 
@@ -119,7 +142,8 @@ export default function Cart() {
             {/* Buy Button */}
             <div className='w-full flex justify-center items-center'>
               <button
-                className={`${styles.buyButton} mt-8 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
+                className={`${styles.buyButton} mt-8 mb-2 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
+                onClick={handleCheckout}
               >
                 Buy
               </button>
