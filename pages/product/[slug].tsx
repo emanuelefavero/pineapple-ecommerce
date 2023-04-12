@@ -66,7 +66,7 @@ export default function ProductDetailPage({ product, products }: IProps) {
             </h1>
             <p className='text-lg font-normal'>{product.details}</p>
             <h3 className='wordSpacingPrice text-4xl font-extrabold mb-4'>
-              {product.price} &euro;
+              &euro; {product.price}
             </h3>
 
             {/* Product Quantity */}

@@ -37,7 +37,7 @@ export default function ProductCard({ product }: IProps) {
               <p>{product.details}</p>
             </div>
             <h3 className='wordSpacingPrice text-4xl font-extrabold'>
-              {product.price} &euro;
+              &euro; {product.price}
             </h3>
           </div>
         </div>
