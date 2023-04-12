@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 import { toast } from 'react-hot-toast'
-import { ICartItem } from '@/types'
+import { IProduct, ICartItem } from '@/types'
 
 // TODO: Move as much state as possible to this context file
 
@@ -20,7 +20,7 @@ const StateContext = createContext({
   setQty: (qty: number) => {},
   incQty: () => {},
   decQty: () => {},
-  onAdd: (product: ICartItem, quantity: number) => {},
+  onAdd: (product: IProduct, quantity: number) => {},
   updateCartItemQuantity: (id: string, value: string) => {},
   removeCartItem: (id: string) => {},
 })
@@ -39,7 +39,7 @@ export function StateContextProvider({
   const [qty, setQty] = useState(1)
 
   // When the user adds a product to the cart
-  const onAdd = (product: ICartItem, quantity: number) => {
+  const onAdd = (product: IProduct, quantity: number) => {
     // Find the item in the cart
     const checkProductInCart = cartItems.find(
       // Check if the item's _id is the same as the product's _id
@@ -59,18 +59,23 @@ export function StateContextProvider({
             ...cartProduct,
             quantity: cartProduct.quantity + quantity,
           }
+
+        return cartProduct
       })
 
       // Replace the cart items with the updated cart items.
-      setCartItems(updatedCartItems as ICartItem[])
+      setCartItems(updatedCartItems)
     } else {
       // The product is not in the cart
 
-      // Add the product to the cart with the quantity. (quantity was passed as a parameter)
-      product.quantity = quantity
+      // Create a new product object with the quantity property
+      const newProduct: ICartItem = {
+        ...product,
+        quantity: quantity,
+      }
 
-      // Add the product to the cart items.
-      setCartItems([...cartItems, { ...product }])
+      // Add the new product to the cart items.
+      setCartItems([...cartItems, newProduct])
     }
 
     toast.success(

@@ -17,6 +17,8 @@ export default function ProductDetailPage({ product, products }: IProps) {
   const [index, setIndex] = useState(0)
 
   const handleBuyNow = () => {
+    // TIP: Here we pass product as any because eventually we will add a quantity property to the product object (see context/StateContext.tsx)
+    // TIP: Ideally we would avoid this by creating a new object with the product properties and the quantity property
     onAdd(product, qty)
 
     setShowCart(true)
