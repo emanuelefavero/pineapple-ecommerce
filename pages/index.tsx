@@ -16,7 +16,7 @@ export default function Home({ products, heroBanner }: IProps) {
 
       {/* PRODUCTS */}
       {/* TODO: Then valuate if it should be moved to own Component */}
-      <h2 className='px-10 pt-14 text-xl xs4:text-4xl font-bold text-center tracking-tight'>
+      <h2 className='px-10 pt-14 text-xl xs4:text-4xl font-bold text-center tracking-tight select-none'>
         Popular Products
       </h2>
       <section className='container mx-auto flex gap-12 flex-wrap justify-center items-center py-16'>

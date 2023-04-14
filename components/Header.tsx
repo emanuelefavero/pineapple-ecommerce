@@ -22,7 +22,7 @@ export default function Header() {
           <div className='w-full flex justify-between px-4 xs3:px-10'>
             {/* Header Logo */}
             <Link
-              className='animate-pulse-one-time hidden xs4:inline active:scale-95'
+              className='animate-pulse-one-time hidden xs4:inline active:scale-95 select-none'
               href='/'
             >
               <Image
@@ -43,7 +43,7 @@ export default function Header() {
             </button>
 
             {/* Header Menu */}
-            <ul className='px-7 hidden sm:flex'>
+            <ul className='px-7 hidden sm:flex select-none'>
               {/* TODO: Add real pages for these items (iPhone, Accessories, About Us) */}
               {/* TODO: Move to separate container where you only need to pass the menu item text and link url */}
               <li className='mr-5'>
@@ -76,7 +76,7 @@ export default function Header() {
           </div>
 
           <button
-            className='flex bg-black text-white px-4 xs3:px-10 py-3 text-lg border-l-2 border-black hover:bg-indigo-500 active:bg-indigo-400'
+            className='flex bg-black text-white px-4 xs3:px-10 py-3 text-lg border-l-2 border-black hover:bg-indigo-500 active:bg-indigo-400 select-none'
             type='button'
             onClick={() => setShowCart(true)}
           >

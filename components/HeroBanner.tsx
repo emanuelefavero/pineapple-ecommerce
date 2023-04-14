@@ -46,7 +46,7 @@ export default function HeroBanner({ heroBanner }: IProps) {
                     // If discounted, show discount price and original price with strikethrough
                     <>
                       &euro; {discountPrice}{' '}
-                      <span className='line-through text-red-800 text-xl xs3:text-3xl font-extrabold relative -top-4 -left-1 xs3:-top-9'>
+                      <span className='line-through text-red-800 text-xl xs3:text-3xl font-extrabold relative -top-4 -left-1 xs3:-top-9 select-none'>
                         {originalPrice}
                       </span>
                     </>
