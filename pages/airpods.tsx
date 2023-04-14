@@ -7,7 +7,7 @@ interface IProps {
   products: IProduct[]
 }
 
-export default function airpodsCategoryPage({ products }: IProps) {
+export default function AirPodsCategoryPage({ products }: IProps) {
   return (
     <>
       {/* PRODUCTS */}

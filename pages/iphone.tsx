@@ -7,7 +7,7 @@ interface IProps {
   products: IProduct[]
 }
 
-export default function iphoneCategoryPage({ products }: IProps) {
+export default function iPhoneCategoryPage({ products }: IProps) {
   return (
     <>
       {/* PRODUCTS */}
