@@ -10,14 +10,16 @@ export default function success() {
         className='tripleCardEffect bg-violet-300 border-2 border-black px-32 py-12 flex flex-col justify-center items-center'
       >
         <IoBagCheckSharp className='w-20 h-20 text-green-700 mb-4' />
-        <h1 className='text-4xl font-extrabold text-center wordSpacingTight tracking-tight mb-1'>
+        <h1 className='text-4xl font-extrabold text-center wordSpacingTight tracking-tight mb-1 select-none'>
           Thank You For Your Order!
         </h1>
-        <p className='text-xl font-bold text-center wordSpacingTight tracking-tight mb-12'>
+        <p className='text-xl font-bold text-center wordSpacingTight tracking-tight mb-12 select-none'>
           Check your email for the receipt
         </p>
         <p className='text-xl font-bold text-center wordSpacingTight tracking-tight mb-4'>
-          If you have any questions, please contact us at{' '}
+          <span className='select-none'>
+            If you have any questions, please contact us at{' '}
+          </span>
           <a
             style={{
               fontSize: '1.25rem',
