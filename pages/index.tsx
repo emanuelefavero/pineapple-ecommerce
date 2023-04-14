@@ -9,6 +9,7 @@ interface IProps {
 }
 
 export default function Home({ products, heroBanner }: IProps) {
+  // TODO: Add a loading state - show a loading spinner while the data is being fetched. Ask ChatGPT how to add loading state to GetStaticProps without using useEffect. Try to use the same loading state for all pages (on the _app.tsx file)
   return (
     <>
       {/* HERO BANNER */}
