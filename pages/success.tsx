@@ -1,10 +1,17 @@
 import styles from '@/styles/SuccessPage.module.scss'
+import { useEffect } from 'react'
 import Link from 'next/link'
 import { IoBagCheckSharp } from 'react-icons/io5'
+import { runConfetti } from '@/lib/confetti'
 
-// TODO: Add confetti library to success page
+// TODO: Reset cartItems, totalPrice and totalQuantity in the cart context
 
 export default function SuccessPage() {
+  useEffect(() => {
+    // * CONFETTI ANIMATION
+    runConfetti()
+  }, [])
+
   return (
     <div className='bg-indigo-200 px-1 xs4:px-4 xs:px-10 pt-20 pb-40 flex justify-center items-center'>
       <div
