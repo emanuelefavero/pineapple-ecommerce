@@ -2,6 +2,8 @@ import styles from '@/styles/SuccessPage.module.scss'
 import Link from 'next/link'
 import { IoBagCheckSharp } from 'react-icons/io5'
 
+// TODO: Add confetti library to success page
+
 export default function SuccessPage() {
   return (
     <div className='bg-indigo-200 px-1 xs4:px-4 xs:px-10 pt-20 pb-40 flex justify-center items-center'>
