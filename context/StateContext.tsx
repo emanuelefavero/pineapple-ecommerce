@@ -2,8 +2,6 @@ import React, { createContext, useContext, useState } from 'react'
 import { toast } from 'react-hot-toast'
 import { IProduct, ICartItem } from '@/types'
 
-// TODO: Move as much state as possible to this context file
-
 // CONTEXT
 const StateContext = createContext({
   showCart: false as boolean,

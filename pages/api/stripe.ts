@@ -64,7 +64,6 @@ export default async function handler(
           }
         }),
 
-        // TODO: Add success and canceled pages
         // ? REDIRECT URLS when stripe checkout is successful or canceled
         success_url: `${req.headers.origin}/success`,
         cancel_url: `${req.headers.origin}/canceled`,

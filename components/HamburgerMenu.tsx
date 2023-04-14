@@ -30,7 +30,6 @@ export default function HamburgerMenu() {
 
           {/* Hamburger Menu Items */}
           <ul className='px-1 xs3:px-7 flex flex-col justify-center items-center pt-10 mb-6 select-none'>
-            {/* TODO: Add real pages for these items (iPhone, Accessories, About Us) */}
             {/* TODO: Move to separate container where you only need to pass the menu item text and link url */}
             <li className='mb-1'>
               <Link

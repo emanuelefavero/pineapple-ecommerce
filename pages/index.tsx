@@ -15,7 +15,7 @@ export default function Home({ products, heroBanner }: IProps) {
       <HeroBanner heroBanner={heroBanner} />
 
       {/* PRODUCTS */}
-      {/* TODO: Then valuate if it should be moved to own Component */}
+      {/* TODO: Move to separate Component? */}
       <h2 className='px-10 pt-14 text-xl xs4:text-4xl font-bold text-center tracking-tight select-none'>
         Popular Products
       </h2>
@@ -47,6 +47,7 @@ export const getStaticProps = async () => {
     revalidate: 60,
   }
 }
+
 // TIP: ***ISR (Incremental Static Regeneration) is a new feature in Next.js that allows you to update existing pages by re-rendering them in the background as traffic comes in.
 
 // It is needed with services like Sanity cause those services will not trigger a rebuild of the site when data is updated

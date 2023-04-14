@@ -44,7 +44,6 @@ export default function Header() {
 
             {/* Header Menu */}
             <ul className='px-7 hidden sm:flex select-none'>
-              {/* TODO: Add real pages for these items (iPhone, Accessories, About Us) */}
               {/* TODO: Move to separate container where you only need to pass the menu item text and link url */}
               <li className='mr-5'>
                 <Link
