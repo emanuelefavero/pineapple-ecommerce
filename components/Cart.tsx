@@ -17,7 +17,7 @@ export default function Cart() {
     updateCartItemQuantity,
     removeCartItem,
   } = useStateContext()
-  const cartRef = useRef() as React.MutableRefObject<HTMLInputElement>
+  const cartRef = useRef<HTMLDivElement>(null)
 
   // STRIPE CHECKOUT
   const handleCheckout = async () => {
@@ -76,12 +76,26 @@ export default function Cart() {
     stripe?.redirectToCheckout({ sessionId: data.id })
   }
 
-  // TODO: Add handle to close cart when clicking outside of it
+  // Close cart when clicking outside of it
+  const closeCartOnOutsideClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    // check if user clicks on the cart parent (the Cart Overlay)
+    if (event.target === cartRef.current) {
+      setShowCart(false)
+    }
+  }
+
+  const closeCartOnOutsideTouch = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (event.target === cartRef.current) {
+      setShowCart(false)
+    }
+  }
 
   return (
     <>
       {/* Cart Overlay */}
       <section
+        onClick={closeCartOnOutsideClick}
+        onTouchStart={closeCartOnOutsideTouch}
         className='w-full h-full bg-slate-900 bg-opacity-80 fixed right-0 top-0 z-50 transition-all duration-1000 ease-in-out'
         ref={cartRef}
       >
