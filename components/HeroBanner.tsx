@@ -60,7 +60,7 @@ export default function HeroBanner({ heroBanner }: IProps) {
                 <Link
                   href={`/product/${slug.current}`}
                   id='heroButtonCTA'
-                  className='bg-slate-900 text-white text-2xl flex justify-center items-center max-w-[12rem] wordSpacingTight tracking-tight font-medium px-1 xs4:px-11 py-1 rounded-md select-none border-slate-700 border-2 active:border-white'
+                  className='tripleCardEffect bg-slate-900 text-white text-2xl flex justify-center items-center max-w-[12rem] wordSpacingTight tracking-tight font-medium px-1 xs4:px-11 py-1 rounded-md select-none border-slate-700 border-2 active:border-white'
                   style={{
                     fontSize: '1.5rem',
                   }}

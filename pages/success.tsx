@@ -5,7 +5,10 @@ import { IoBagCheckSharp } from 'react-icons/io5'
 export default function success() {
   return (
     <div className='bg-indigo-200 px-10 pt-20 pb-40 flex justify-center items-center'>
-      <div className='bg-violet-300 border-2 border-black px-32 py-12 flex flex-col justify-center items-center'>
+      <div
+        id='successPageCard'
+        className='tripleCardEffect bg-violet-300 border-2 border-black px-32 py-12 flex flex-col justify-center items-center'
+      >
         <IoBagCheckSharp className='w-20 h-20 text-green-700 mb-4' />
         <h1 className='text-4xl font-extrabold text-center wordSpacingTight tracking-tight mb-1'>
           Thank You For Your Order!
