@@ -9,6 +9,10 @@ export interface IProduct {
   _createdAt: string
   _id: string
   _updatedAt: string
+
+  category: {
+    _ref: string
+  }
 }
 
 // NOTE: this is the same as IProduct but with quantity

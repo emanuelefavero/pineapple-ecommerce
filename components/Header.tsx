@@ -49,7 +49,7 @@ export default function Header() {
               <li className='mr-5'>
                 <Link
                   className={`${styles.headerLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
-                  href='/'
+                  href='/iphone'
                 >
                   iPhone
                 </Link>
@@ -58,16 +58,16 @@ export default function Header() {
               <li className='mr-5'>
                 <Link
                   className={`${styles.headerLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
-                  href='/'
+                  href='/airpods'
                 >
-                  Accessories
+                  AirPods
                 </Link>
               </li>
 
               <li className='mr-5'>
                 <Link
                   className={`${styles.headerLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
-                  href='/'
+                  href='/about-us'
                 >
                   About Us
                 </Link>

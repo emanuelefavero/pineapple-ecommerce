@@ -35,7 +35,7 @@ export default function HamburgerMenu() {
             <li className='mb-1'>
               <Link
                 className={`${styles.hamburgerMenuLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
-                href='/'
+                href='/iphone'
                 onClick={() => setShowHamburgerMenu(false)}
               >
                 iPhone
@@ -45,17 +45,17 @@ export default function HamburgerMenu() {
             <li className='mb-1'>
               <Link
                 className={`${styles.hamburgerMenuLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
-                href='/'
+                href='/airpods'
                 onClick={() => setShowHamburgerMenu(false)}
               >
-                Accessories
+                AirPods
               </Link>
             </li>
 
             <li className='mb-1'>
               <Link
                 className={`${styles.hamburgerMenuLink} text-black wordSpacingTight tracking-tight hover:no-underline active:scale-95`}
-                href='/'
+                href='/about-us'
                 onClick={() => setShowHamburgerMenu(false)}
               >
                 About Us
