@@ -1,0 +1,7 @@
+.emailLink {
+  font-size: 1.25rem !important;
+
+  @media screen and (max-width: 220px) {
+    font-size: 0.875rem !important;
+  }
+}
