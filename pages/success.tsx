@@ -1,4 +1,5 @@
 import styles from '@/styles/SuccessPage.module.scss'
+import Link from 'next/link'
 import { IoBagCheckSharp } from 'react-icons/io5'
 
 export default function SuccessPage() {
@@ -27,13 +28,15 @@ export default function SuccessPage() {
           </a>
         </p>
 
-        <button
-          className='
+        <Link href='/'>
+          <button
+            className='
           text-sm xs4:text-2xl font-bold select-none text-white bg-indigo-500 py-1 px-2 xs4:px-10 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out
         '
-        >
-          Continue Shopping
-        </button>
+          >
+            Continue Shopping
+          </button>
+        </Link>
       </div>
     </div>
   )
