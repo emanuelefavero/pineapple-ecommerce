@@ -119,7 +119,7 @@ export default function Cart() {
                   <button
                     type='button'
                     onClick={() => setShowCart(false)}
-                    className={`${styles.buyButton} mt-8 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
+                    className='mt-8 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out'
                   >
                     Continue Shopping
                   </button>
@@ -214,7 +214,7 @@ export default function Cart() {
                 {/* Buy Button */}
                 <div className='w-full flex justify-center items-center'>
                   <button
-                    className={`${styles.buyButton} mt-8 mb-2 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out`}
+                    className='mt-8 mb-2 text-3xl font-bold select-none text-white bg-indigo-500 py-1 px-20 rounded-lg uppercase border-indigo-700 border-2 hover:bg-slate-800 hover:border-black active:border-white active:scale-95 transition-all duration-100 ease-in-out'
                     onClick={handleCheckout}
                   >
                     Buy
