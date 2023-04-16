@@ -67,9 +67,10 @@ export default function ProductDetailPage({ product, products }: IProps) {
               {product.name}
             </h1>
             <p className='text-lg font-normal'>{product.details}</p>
-            <h3 className='wordSpacingPrice text-4xl font-extrabold mb-4'>
-              &euro; {product.price}
-            </h3>
+            <p className='wordSpacingTight tracking-tight text-4xl font-extrabold mb-4'>
+              <span className='mr-2'>&euro;</span>
+              {product.price}
+            </p>
 
             {/* Product Quantity */}
             <nav className='flex flex-col xs3:flex-row justify-start items-center mb-5'>
