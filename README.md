@@ -2,6 +2,10 @@
 
 Pineapple ecommerce is an iPhone ecommerce built with Next.js Sanity and Stripe
 
+## Demo
+
+- [https://pineapple-ecommerce.vercel.app/](https://pineapple-ecommerce.vercel.app/)
+
 &nbsp;
 
 ---
