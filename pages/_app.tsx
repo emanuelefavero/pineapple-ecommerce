@@ -20,6 +20,10 @@ export default function App({ Component, pageProps }: AppProps) {
           name='description'
           content='An ecommerce selling the latest iPhones on all colors'
         />
+        <meta
+          name='keywords'
+          content='technology, iphone, apple, store, ecommerce'
+        />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
         <link rel='robots' href='/robots.txt' />
