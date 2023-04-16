@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import Head from 'next/head'
 import Image from 'next/image'
 import { client, urlFor } from '@/lib/client'
 import { ProductCard } from '@/components'
@@ -26,6 +27,9 @@ export default function ProductDetailPage({ product, products }: IProps) {
 
   return (
     <>
+      <Head>
+        <title>{product.name}</title>
+      </Head>
       <section className='bg-white flex items-center border-black border-b-2 flex-col sm:flex-row'>
         {/* PRODUCT IMAGE */}
         <div className='bg-white w-full h-80 sm:h-96 py-10 sm:w-1/2 flex items-center justify-center'>

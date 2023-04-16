@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { client } from '@/lib/client'
 import { ProductCard } from '@/components'
 
@@ -10,6 +11,9 @@ interface IProps {
 export default function AirPodsCategoryPage({ products }: IProps) {
   return (
     <>
+      <Head>
+        <title>AirPods products</title>
+      </Head>
       {/* PRODUCTS */}
       {/* TODO: Then valuate if it should be moved to own Component */}
       <h2 className='px-10 pt-14 text-xl xs4:text-4xl font-bold text-center tracking-tight select-none'>
