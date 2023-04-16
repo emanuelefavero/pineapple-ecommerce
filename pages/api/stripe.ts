@@ -39,8 +39,7 @@ export default async function handler(
             .replace(
               'image-',
               // NOTE: use sanity project id in the url
-              // TODO: add sanity project to url
-              'https://cdn.sanity.io/images/rnizwphe/production/'
+              `https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/production/`
             )
             // NOTE: put .jpg or .png if you don't use webp images (sanity)
             .replace('-jpg', '.jpg')

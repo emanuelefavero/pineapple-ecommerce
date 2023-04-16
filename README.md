@@ -21,6 +21,9 @@ Pineapple ecommerce is an iPhone ecommerce built with Next.js Sanity and Stripe
 
 ```bash
 # SANITY
+# Go to the Sanity manage section, open your project and copy the project ID
+# @link https://www.sanity.io/manage
+NEXT_PUBLIC_SANITY_PROJECT_ID=''
 # Go to the API section of your Sanity project, create a new token and copy it
 # choose token permissions depending on your needs
 # @link https://www.sanity.io/manage
@@ -62,6 +65,7 @@ NEXT_PUBLIC_STRIPE_SECRET_KEY=''
 - remember to add the following environment variables to Vercel:
 
 ```bash
+NEXT_PUBLIC_SANITY_PROJECT_ID
 NEXT_PUBLIC_SANITY_TOKEN
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
 NEXT_PUBLIC_STRIPE_SECRET_KEY
