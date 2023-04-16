@@ -22,6 +22,8 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
+        <link rel='robots' href='/robots.txt' />
+        <link rel='manifest' href='/manifest.json' />
       </Head>
 
       {/* STATE CONTEXT */}
