@@ -54,6 +54,7 @@ NEXT_PUBLIC_STRIPE_SECRET_KEY=''
 
 ### Deploy App to Vercel
 
+- add a `.vercelignore` file in the root directory and add the `sanity-pineapple` folder to it to ignore it when deploying to Vercel
 - remember to add the following environment variables to Vercel:
 
 ```bash
