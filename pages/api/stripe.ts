@@ -39,7 +39,7 @@ export default async function handler(
             .replace(
               'image-',
               // NOTE: use sanity project id in the url
-              // TODO: move sanity project id to env
+              // TODO: add sanity project to url
               'https://cdn.sanity.io/images/rnizwphe/production/'
             )
             // NOTE: put .jpg or .png if you don't use webp images (sanity)
