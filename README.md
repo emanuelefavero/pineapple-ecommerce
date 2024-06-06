@@ -20,7 +20,7 @@ Pineapple ecommerce is an iPhone ecommerce built with Next.js Sanity and Stripe
 
 - clone this repo and `cd` into it
 - run `npm install` to install all dependencies
-- `cd` into the `sanity-ecommerce` folder and run `npm install` to install all dependencies
+- `cd` into the `sanity-pineapple` folder and run `npm install` to install all dependencies
 
 - create a `.env.local` file in the root directory and add the following:
 
@@ -42,7 +42,7 @@ NEXT_PUBLIC_STRIPE_SECRET_KEY=''
 ```
 
 - run `npm run dev` to start Next.js
-- open a new terminal tab, `cd` into the `sanity-ecommerce` folder and run `npm run dev` to start Sanity Studio
+- open a new terminal tab, `cd` into the `sanity-pineapple` folder and run `npm run dev` to start Sanity Studio
 - go to [http://localhost:3000](http://localhost:3000) to see the app
 - go to [http://localhost:3333](http://localhost:3333) to see the Sanity Studio and upload content there
 
