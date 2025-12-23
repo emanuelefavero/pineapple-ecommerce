@@ -160,10 +160,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths,
 
     // ? the server will return a 404 page for any paths that are not generated at build time. This means that all possible paths for the website must be specified in the paths array returned by getStaticPaths method.
-    fallback: false,
+    // fallback: false,
 
     // ? the server will not return a 404 page for any path that is not generated at build time. Instead, Next.js will wait for the data to be generated on the server and then render the page with the new data.
-    // fallback: 'blocking',
+    fallback: 'blocking',
   }
 }
 
